@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class IndexController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("/client/index.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("/client/view/index.jsp");
 		rd.forward(req, resp);
 	}
 }
