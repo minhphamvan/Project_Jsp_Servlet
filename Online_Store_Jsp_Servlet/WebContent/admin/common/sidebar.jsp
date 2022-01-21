@@ -39,8 +39,10 @@
 				</div>
 				<div class="left__text">
 					<a class="left__link"
-						href="/Online_Store_Jsp_Servlet/admin/static/add-category">Thêm
-						danh mục</a> <a class="left__link" href="">Xem tất cả</a>
+						href="/Online_Store_Jsp_Servlet/admin/category/add">Thêm danh
+						mục</a> <a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/category/show-all">Xem
+						tất cả</a>
 				</div>
 			</li>
 

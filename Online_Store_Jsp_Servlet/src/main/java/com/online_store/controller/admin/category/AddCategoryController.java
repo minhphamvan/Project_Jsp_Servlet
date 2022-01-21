@@ -16,7 +16,7 @@ import com.sun.net.httpserver.HttpServer;
 public class AddCategoryController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/admin/category/add-category.jsp").forward(req, resp);
+		req.getRequestDispatcher("/admin/view/category/add-category.jsp").forward(req, resp);
 	}
 	
 	@Override

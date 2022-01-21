@@ -21,6 +21,6 @@ public class ShowAllCategoryController extends HttpServlet {
 		
 		req.setAttribute("listCategory", listCategory);
 
-		req.getRequestDispatcher("/admin/category/show-all-category.jsp").forward(req, resp);
+		req.getRequestDispatcher("/admin/view/category/show-all-category.jsp").forward(req, resp);
 	}
 }

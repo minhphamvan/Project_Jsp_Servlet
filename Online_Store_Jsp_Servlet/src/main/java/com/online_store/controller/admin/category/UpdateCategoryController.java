@@ -21,7 +21,7 @@ public class UpdateCategoryController extends HttpServlet {
 		Category category = categoryDaoImpl.getCategoryById(id);
 
 		req.setAttribute("category", category);
-		req.getRequestDispatcher("/admin/category/update-category.jsp").forward(req, resp);
+		req.getRequestDispatcher("/admin/view/category/update-category.jsp").forward(req, resp);
 	}
 	
 	@Override
