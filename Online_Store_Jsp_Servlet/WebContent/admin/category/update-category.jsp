@@ -26,27 +26,22 @@
 						<div class="right__title">Bảng điều khiển</div>
 						<p class="right__desc">Chi tiết danh mục</p>
 						<div class="right__formWrapper">
-							<form action="#" method="post">
+							<form action="/Online_Store_Jsp_Servlet/admin/category/update" method="post">
 								<div class="right__inputWrapper">
 									<label for="title">Mã danh mục</label> <input type="text"
-										placeholder="Mã danh mục" value="1" readonly>
+										name="id" value="${category.id}" readonly>
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Tên danh mục</label> <input type="text"
-										placeholder="Tên danh mục" value="Laptop">
-								</div>
-
-								<div class="right__inputWrapper">
-									<label for="desc">Mô tả</label>
-									<textarea name="" id="" cols="30" rows="10" placeholder="Mô tả"></textarea>
+										name="name" value="${category.name}">
 								</div>
 
 								<button class="btn" type="submit">Cập nhật</button>
 							</form>
 						</div>
 
-						<a href="show-all-category.html" class="right__tableMore"> Xem
+						<a href="/Online_Store_Jsp_Servlet/admin/category/show-all" class="right__tableMore"> Xem
 							tất cả danh mục<img
 							src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
 							alt="">
