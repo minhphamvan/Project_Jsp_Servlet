@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,45 +32,50 @@
 								<table>
 									<thead>
 										<tr>
-											<th>Mã sản phẩm</th>
+											<th>Mã</th>
 											<th>Hình ảnh</th>
 											<th>Tên sản phẩm</th>
-											<th>Giá sản phẩm</th>
-											<th>Số lượng</th>
 											<th>Thuộc danh mục</th>
+											<th>Giá sản phẩm</th>
+											<th>Còn lại</th>
 											<th>Mô tả</th>
-											<th>Chi tiết</th>
 											<th>Sửa</th>
 											<th>Xoá</th>
 										</tr>
 									</thead>
 
 									<tbody>
-										<tr>
-											<td data-label="Mã sản phẩm">1</td>
-											<td data-label="Hình ảnh"><img src="/Online_Store_Jsp_Servlet/admin/static/images/avatar1.png"
-												alt=""></td>
-											<td data-label="Tên sản phẩm">HP 340G2</td>
-											<td data-label="Giá sản phẩm">5.000.000</td>
-											<td data-label="Số lượng còn lại">5</td>
-											<td data-label="Thuộc danh mục">Laptop</td>
-											<td data-label="Mô tả">Laptop HP 340G2</td>
-											<td data-label="Chi tiết" class="right__iconTable"><a
-												href="deatils-product.html"><img
-													src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg" alt=""></a></td>
-											<td data-label="Sửa" class="right__iconTable"><a
-												href="details-product.html"><img
-													src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-edit.svg" alt=""></a></td>
-											<td data-label="Xoá" class="right__iconTable"><a
-												href="#"><img src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-trash-black.svg" alt=""></a>
-											</td>
-										</tr>
+
+										<c:forEach var="product" items="${listProduct}">
+											<tr>
+												<td data-label="Mã">${product.id}</td>
+												<td data-label="Hình ảnh"><img
+													src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
+													alt=""></td>
+												<td data-label="Tên sản phẩm">${product.name}</td>
+												<td data-label="Thuộc danh mục">${product.category.name}</td>
+												<td data-label="Giá sản phẩm">${product.price}</td>
+												<td data-label="Còn lại">${product.amount}</td>
+												<td data-label="Mô tả">${product.description}</td>
+
+												<td data-label="Sửa" class="right__iconTable"><a
+													href="/Online_Store_Jsp_Servlet/admin/product/update?id=${product.id}"><img
+														src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-edit.svg"
+														alt=""></a></td>
+												<td data-label="Xoá" class="right__iconTable"><a
+													href="/Online_Store_Jsp_Servlet/admin/product/delete?id=${product.id}"><img
+														src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-trash-black.svg"
+														alt=""></a></td>
+											</tr>
+										</c:forEach>
 
 									</tbody>
 								</table>
 
-								<a href="add-product.html" class="right__tableMore"> Thêm
-									sản phẩm<img src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg" alt="">
+								<a href="/Online_Store_Jsp_Servlet/admin/product/add" class="right__tableMore"> Thêm
+									sản phẩm<img
+									src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
+									alt="">
 								</a>
 							</div>
 						</div>

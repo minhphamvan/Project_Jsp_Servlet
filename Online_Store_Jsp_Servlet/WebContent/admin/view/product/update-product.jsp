@@ -27,10 +27,11 @@
 						<p class="right__desc">Chi tiết sản phẩm</p>
 
 						<div class="right__formWrapper">
-							<form action="" method="post">
+							<form action="/Online_Store_Jsp_Servlet/admin/product/update"
+								method="post">
 								<div class="right__inputWrapper">
 									<label for="title">Mã sản phẩm</label> <input type="text"
-										placeholder="Mã sản phẩm" value="1" readonly>
+										placeholder="Mã sản phẩm" value="${product.id}" readonly>
 								</div>
 
 								<div class="right__inputWrapper">
@@ -41,14 +42,30 @@
 
 								<div class="right__inputWrapper">
 									<label for="title">Tên sản phẩm</label> <input type="text"
-										placeholder="Tên sản phẩm" value="HP 340G2">
+										placeholder="Tên sản phẩm" value="${product.name}">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Thuộc danh mục</label> <select id="select">
-										<option value="Laptop">Laptop</option>
-										<option value="Tivi">Tivi</option>
+										<c:forEach var="category" items="${listCategory}">
+											<option value="${category.id}">${category.name}</option>
+										</c:forEach>
 									</select>
+								</div>
+
+								<div class="right__inputWrapper">
+									<label for="title">Giá sản phẩm</label> <input type="text"
+										placeholder="Giá sản phẩm" value="${product.price}">
+								</div>
+
+								<div class="right__inputWrapper">
+									<label for="title">Còn lại</label> <input type="text"
+										placeholder="Còn lại" value="${product.amount}">
+								</div>
+
+								<div class="right__inputWrapper">
+									<label for="title">Rating</label> <input type="text"
+										placeholder="Rating" value="${product.rating}">
 								</div>
 
 								<div class="right__inputWrapper">
@@ -60,8 +77,10 @@
 							</form>
 						</div>
 
-						<a href="show-all-product.html" class="right__tableMore"> Xem
-							tất cả sản phẩm<img src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg" alt="">
+						<a href="/Online_Store_Jsp_Servlet/admin/product/show-all"
+							class="right__tableMore"> Xem tất cả sản phẩm<img
+							src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
+							alt="">
 						</a>
 					</div>
 				</div>

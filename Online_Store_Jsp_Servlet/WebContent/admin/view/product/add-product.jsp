@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,60 +22,68 @@
 				<!-- Sidebar -->
 				<jsp:include page="/admin/common/sidebar.jsp"></jsp:include>
 
-
-				<!-- Content -->
+				<!-- Content-->
 				<div class="right">
 					<div class="right__content">
 						<div class="right__title">Bảng điều khiển</div>
 						<p class="right__desc">Thêm sản phẩm</p>
 
 						<div class="right__formWrapper">
-							<form action="#" method="post">
+							<form action="/Online_Store_Jsp_Servlet/admin/product/add"
+								method="post">
 								<div class="right__inputWrapper">
-									<label for="title">Mã sản phẩm</label> <input type="text"
-										placeholder="Mã sản phẩm">
-								</div>
-
-								<div class="right__inputWrapper">
-									<label for="image">Hình ảnh</label> <input type="file">
+									<label for="image">Hình ảnh</label>
+									<td data-label="Hình ảnh"><img
+										src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
+										alt=""></td> <input type="file" name="image">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Tên sản phẩm</label> <input type="text"
-										placeholder="Tên sản phẩm">
+										placeholder="Tên sản phẩm" name="name">
 								</div>
 
 								<div class="right__inputWrapper">
-									<label for="title">Giá</label> <input type="text"
-										placeholder="Giá">
-								</div>
-
-								<div class="right__inputWrapper">
-									<label for="title">Số lượng</label> <input type="text"
-										placeholder="Số lượng">
-								</div>
-
-								<div class="right__inputWrapper">
-									<label for="title">Thuộc danh mục</label> <select id="select">
-										<option value="Laptop">Laptop</option>
-										<option value="Tivi">Tivi</option>
+									<label for="title">Thuộc danh mục</label> <select id="select" name="id_category">
+										<c:forEach var="category" items="${listCategory}">
+											<option value="${category.id}">${category.name}</option>
+										</c:forEach>
 									</select>
 								</div>
 
 								<div class="right__inputWrapper">
-									<label for="desc">Mô tả</label>
-									<textarea name="" id="" cols="30" rows="10" placeholder="Mô tả"></textarea>
+									<label for="title">Giá sản phẩm</label> <input type="text"
+										placeholder="Giá sản phẩm" name="price">
 								</div>
 
-								<button class="btn" type="submit">Thêm</button>
+								<div class="right__inputWrapper">
+									<label for="title">Còn lại</label> <input type="text"
+										placeholder="Còn lại" name="amount">
+								</div>
+								
+								<div class="right__inputWrapper">
+									<label for="title">Rating</label> <input type="text"
+										placeholder="Rating" name="rating">
+								</div>
+
+								<div class="right__inputWrapper">
+									<label for="desc">Mô tả</label>
+									<textarea name="description" id="" cols="30" rows="10"
+										placeholder="Mô tả"></textarea>
+								</div>
+
+								<button class="btn" type="submit">Cập nhật</button>
 							</form>
 						</div>
 
-						<a href="show-all-product.html" class="right__tableMore"> Xem
-							tất cả sản phẩm<img src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg" alt="">
+						<a href="/Online_Store_Jsp_Servlet/admin/product/show-all"
+							class="right__tableMore"> Xem tất cả sản phẩm<img
+							src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
+							alt="">
 						</a>
 					</div>
 				</div>
+
 
 			</div>
 		</div>

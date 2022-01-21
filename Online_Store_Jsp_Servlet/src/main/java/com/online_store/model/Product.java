@@ -15,9 +15,19 @@ public class Product {
 	private Category category;
 
 	private double price;
-	private double sale;
-	private double amount;
-	private int ratting;
+	private int amount;
+	private int rating;
 	private String description;
+
+	public Product(String image, String name, Category category, double price, int amount, int rating,
+			String description) {
+		this.image = image;
+		this.name = name;
+		this.category = category;
+		this.price = price;
+		this.amount = amount;
+		this.rating = rating;
+		this.description = description;
+	}
 
 }
