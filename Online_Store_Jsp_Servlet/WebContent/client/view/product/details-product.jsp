@@ -58,40 +58,59 @@
 	<div class="product-detail">
 		<div class="container-fluid">
 			<div class="row">
-			<!-- Sidebar -->
-			<jsp:include page="/client/common/sidebar.jsp"></jsp:include>
-			
+				<!-- Sidebar -->
+				<jsp:include page="/client/common/sidebar.jsp"></jsp:include>
+
 				<div class="col-lg-9">
 					<div class="product-detail-top">
 						<div class="row align-items-center">
 							<div class="col-md-5">
 								<div class="product-slider-single normal-slider">
-									<img src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg" alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-3.jpg" alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-5.jpg" alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-7.jpg" alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-9.jpg" alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+									<img
+										src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
+										alt="Product Image"> <img
+										src="/Online_Store_Jsp_Servlet/client/static/img/product-3.jpg"
+										alt="Product Image"> <img
+										src="/Online_Store_Jsp_Servlet/client/static/img/product-5.jpg"
+										alt="Product Image"> <img
+										src="/Online_Store_Jsp_Servlet/client/static/img/product-7.jpg"
+										alt="Product Image"> <img
+										src="/Online_Store_Jsp_Servlet/client/static/img/product-9.jpg"
+										alt="Product Image"> <img
+										src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+										alt="Product Image">
 								</div>
 
 								<div class="product-slider-single-nav normal-slider">
 									<div class="slider-nav-img">
-										<img src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg" alt="Product Image">
+										<img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
+											alt="Product Image">
 									</div>
 									<div class="slider-nav-img">
-										<img src="/Online_Store_Jsp_Servlet/client/static/img/product-3.jpg" alt="Product Image">
+										<img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-3.jpg"
+											alt="Product Image">
 									</div>
 									<div class="slider-nav-img">
-										<img src="/Online_Store_Jsp_Servlet/client/static/img/product-5.jpg" alt="Product Image">
+										<img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-5.jpg"
+											alt="Product Image">
 									</div>
 									<div class="slider-nav-img">
-										<img src="/Online_Store_Jsp_Servlet/client/static/img/product-7.jpg" alt="Product Image">
+										<img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-7.jpg"
+											alt="Product Image">
 									</div>
 									<div class="slider-nav-img">
-										<img src="/Online_Store_Jsp_Servlet/client/static/img/product-9.jpg" alt="Product Image">
+										<img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-9.jpg"
+											alt="Product Image">
 									</div>
 									<div class="slider-nav-img">
-										<img src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+										<img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+											alt="Product Image">
 									</div>
 								</div>
 							</div>
@@ -111,12 +130,12 @@
 									<div class="price">
 										<h4>Giá:</h4>
 										<p>
-											$99 <span>$149</span>
+											$ ${product.price} <span>$149</span>
 										</p>
 									</div>
 
 									<div class="quantity">
-										<h4>Còn lại:</h4>
+										<h4>Số lượng:</h4>
 										<div class="qty">
 											<button class="btn-minus">
 												<i class="fa fa-minus"></i>
@@ -125,16 +144,6 @@
 											<button class="btn-plus">
 												<i class="fa fa-plus"></i>
 											</button>
-										</div>
-									</div>
-
-									<div class="p-size">
-										<h4>Size:</h4>
-										<div class="btn-group btn-group-sm">
-											<button type="button" class="btn">S</button>
-											<button type="button" class="btn">M</button>
-											<button type="button" class="btn">L</button>
-											<button type="button" class="btn">XL</button>
 										</div>
 									</div>
 
@@ -164,22 +173,13 @@
 									data-toggle="pill" href="#description">Mô tả</a></li>
 
 								<li class="nav-item"><a class="nav-link" data-toggle="pill"
-									href="#specification">Chi tiết</a></li>
-
-								<li class="nav-item"><a class="nav-link" data-toggle="pill"
 									href="#reviews">Đánh giá</a></li>
 							</ul>
 
 							<div class="tab-content">
 								<div id="description" class="container tab-pane active">
 									<h4>Mô tả</h4>
-									<p>. . .</p>
-								</div>
-
-								<div id="specification" class="container tab-pane fade">
-									<h4>Chi tiết</h4>
-									<ul>
-										<li>. . .</li>
+									<p>${product.description}</p>
 								</div>
 
 								<div id="reviews" class="container tab-pane fade">
@@ -202,15 +202,10 @@
 												class="far fa-star"></i>
 										</div>
 										<div class="row form">
-											<div class="col-sm-6">
-												<input type="text" placeholder="Tên của bạn">
-											</div>
-											<div class="col-sm-6">
-												<input type="email" placeholder="Email">
-											</div>
-											<div class="col-sm-12">
+											<div class="col-sm-9">
 												<textarea placeholder="Đánh giá"></textarea>
 											</div>
+											
 											<div class="col-sm-12">
 												<button>Gửi đi</button>
 											</div>
@@ -240,7 +235,8 @@
 									</div>
 									<div class="product-image">
 										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+											alt="Product Image">
 										</a>
 										<div class="product-action">
 											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
@@ -270,7 +266,8 @@
 									</div>
 									<div class="product-image">
 										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+											alt="Product Image">
 										</a>
 										<div class="product-action">
 											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
@@ -300,7 +297,8 @@
 									</div>
 									<div class="product-image">
 										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+											alt="Product Image">
 										</a>
 										<div class="product-action">
 											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
@@ -330,7 +328,8 @@
 									</div>
 									<div class="product-image">
 										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+											alt="Product Image">
 										</a>
 										<div class="product-action">
 											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
@@ -360,7 +359,8 @@
 									</div>
 									<div class="product-image">
 										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg" alt="Product Image">
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+											alt="Product Image">
 										</a>
 										<div class="product-action">
 											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
@@ -390,22 +390,28 @@
 		<div class="container-fluid">
 			<div class="brand-slider">
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-1.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-1.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-2.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-2.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-3.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-3.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-4.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-4.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-5.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-5.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-6.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-6.png"
+						alt="">
 				</div>
 			</div>
 		</div>

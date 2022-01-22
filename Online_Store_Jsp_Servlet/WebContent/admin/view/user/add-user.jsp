@@ -8,7 +8,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard - Quản lý cửa hàng</title>
-<link rel="stylesheet" href="/Online_Store_Jsp_Servlet/admin/static/css/main.css">
+<link rel="stylesheet"
+	href="/Online_Store_Jsp_Servlet/admin/static/css/main.css">
 </head>
 
 <body>
@@ -19,69 +20,72 @@
 				<!-- Sidebar -->
 				<jsp:include page="/admin/common/sidebar.jsp"></jsp:include>
 
-<!-- Content-->
-                <div class="right">
-                    <div class="right__content">
-                        <div class="right__title">Bảng điều khiển</div>
-                        <p class="right__desc">Thêm người dùng</p>
-                        <div class="right__formWrapper">
-                            <form action="" method="post">
-                                <div class="right__inputWrapper">
-                                    <label for="title">Mã</label>
-                                    <input type="text" placeholder="Mã">
-                                </div>
+				<!-- Content-->
+				<div class="right">
+					<div class="right__content">
+						<div class="right__title">Bảng điều khiển</div>
+						<p class="right__desc">Thêm người dùng</p>
+						<div class="right__formWrapper">
+							
+							<form action="/Online_Store_Jsp_Servlet/admin/user/add" method="post">
+								<div class="right__inputWrapper">
+									<label for="title">Mã</label> <input type="text"
+										placeholder="Mã" name="id">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="image">Hình ảnh</label>
-                                    <input type="file">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="image">Hình ảnh</label> <input type="file"
+										name="image">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Họ tên</label>
-                                    <input type="text" placeholder="Họ tên">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Tên tài khoản</label> <input type="text"
+										placeholder="Tên tài khoản" name="username">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Địa chỉ</label>
-                                    <input type="text" placeholder="Địa chỉ">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Mật khẩu</label> <input type="text"
+										placeholder="Mật khẩu" name="password">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Số điện thoại</label>
-                                    <input type="text" placeholder="Số điện thoại">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Họ tên</label> <input type="text"
+										placeholder="Họ tên" name="full_name">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Email</label>
-                                    <input type="text" placeholder="Email">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Email</label> <input type="text"
+										placeholder="Email" name="email">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Tên đăng nhập</label>
-                                    <input type="text" placeholder="Tên đăng nhập">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Số điện thoại</label> <input type="text"
+										placeholder="Số điện thoại" name="phone_number">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Mật khẩu</label>
-                                    <input type="text" placeholder="Mật khẩu">
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Địa chỉ</label> <input type="text"
+										placeholder="Địa chỉ" name="address">
+								</div>
 
-                                <div class="right__inputWrapper">
-                                    <label for="title">Vai trò</label>
-                                    <select id="select">
-                                        <option value="User">Người dùng</option>
-                                        <option value="Admin">Quản trị viên</option>
-                                    </select>
-                                </div>
+								<div class="right__inputWrapper">
+									<label for="title">Vai trò</label> <select id="select">
+										<option value="ROLE_USER">Khách hàng</option>
+										<option value="ROLE_ADMIN">Quản trị viên</option>
+									</select>
+								</div>
 
-                                <button class="btn" type="submit">Thêm</button>
-                            </form>
-                        </div>
+								<button class="btn" type="submit">Thêm</button>
+							</form>
+						</div>
 
-                        <a href="show-all-user.html" class="right__tableMore">
-                            Xem tất cả người dùng<img src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg" alt=""></a>
-                    </div>
-                </div>
+						<a href="show-all-user.html" class="right__tableMore"> Xem tất
+							cả người dùng<img
+							src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
+							alt="">
+						</a>
+					</div>
+				</div>
 
 
 			</div>

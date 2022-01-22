@@ -1,4 +1,4 @@
-package com.online_store.controller.admin.product;
+package com.online_store.controller.client.product;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,8 +14,8 @@ import com.online_store.dao.impl.ProductDaoImpl;
 import com.online_store.model.Category;
 import com.online_store.model.Product;
 
-@WebServlet(urlPatterns = { "/admin/product/update" })
-public class UpdateProductController extends HttpServlet {
+@WebServlet(urlPatterns = { "/client/product/details" })
+public class DetailsProductController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// Lấy ra thông tin chi tiết sản phẩm
@@ -26,13 +26,7 @@ public class UpdateProductController extends HttpServlet {
 		
 		req.setAttribute("product", product);
 
-		// Lấy ra danh sách category
-		CategoryDaoImpl categoryDaoImpl = new CategoryDaoImpl();
-		List<Category> listCategory = categoryDaoImpl.getAllCategory();
-
-		req.setAttribute("listCategory", listCategory);
-
-		req.getRequestDispatcher("/admin/view/product/update-product.jsp").forward(req, resp);
+		req.getRequestDispatcher("/client/view/product/details-product.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -54,6 +48,6 @@ public class UpdateProductController extends HttpServlet {
 		ProductDaoImpl productDaoImpl = new ProductDaoImpl();
 		productDaoImpl.updateProduct(product);
 
-		resp.sendRedirect("/Online_Store_Jsp_Servlet/admin/product/show-all");
+		resp.sendRedirect("/Online_Store_Jsp_Servlet/client/product/show-all");
 	}
 }

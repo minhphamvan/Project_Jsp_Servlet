@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,9 +60,10 @@
 	<div class="product-view">
 		<div class="container-fluid">
 			<div class="row">
+
 				<!-- Sidebar -->
 				<jsp:include page="/client/common/sidebar.jsp"></jsp:include>
-			
+
 				<div class="col-lg-9">
 					<div class="row">
 						<div class="col-md-12">
@@ -106,95 +109,45 @@
 							</div>
 						</div>
 
-						<div class="col-md-4">
-							<div class="product-item">
-								<div class="product-title">
-									<a href="#">Tên sản phẩm</a>
-									<div class="ratting">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i>
-									</div>
-								</div>
-								<div class="product-image">
-									<a href="product-detail.html"> <img src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
-										alt="Product Image">
-									</a>
-									<div class="product-action">
-										<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-											class="fa fa-heart"></i></a> <a href="#"><i
-											class="fa fa-search"></i></a>
-									</div>
-								</div>
-								<div class="product-price">
-									<h3>
-										<span>$</span>99
-									</h3>
-									<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
-										ngay</a>
-								</div>
-							</div>
-						</div>
+						<c:forEach var="product" items="${listProduct}">
 
-						<div class="col-md-4">
-							<div class="product-item">
-								<div class="product-title">
-									<a href="#">Tên sản phẩm</a>
-									<div class="ratting">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i>
-									</div>
-								</div>
-								<div class="product-image">
-									<a href="product-detail.html"> <img src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
-										alt="Product Image">
-									</a>
-									<div class="product-action">
-										<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-											class="fa fa-heart"></i></a> <a href="#"><i
-											class="fa fa-search"></i></a>
-									</div>
-								</div>
-								<div class="product-price">
-									<h3>
-										<span>$</span>99
-									</h3>
-									<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
-										ngay</a>
-								</div>
-							</div>
-						</div>
+							<div class="col-md-4">
+								<div class="product-item">
+									<div class="product-title">
+										<a
+											href="/Online_Store_Jsp_Servlet/client/product/details?id=${product.id}">${product.name}</a>
+										<div class="ratting">
 
-						<div class="col-md-4">
-							<div class="product-item">
-								<div class="product-title">
-									<a href="#">Tên sản phẩm</a>
-									<div class="ratting">
-										<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+
+										</div>
 									</div>
-								</div>
-								<div class="product-image">
-									<a href="product-detail.html"> <img src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
-										alt="Product Image">
-									</a>
-									<div class="product-action">
-										<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-											class="fa fa-heart"></i></a> <a href="#"><i
-											class="fa fa-search"></i></a>
+
+									<div class="product-image">
+										<a href="product-detail.html"> <img
+											src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
+											alt="Product Image">
+										</a>
+
+										<div class="product-action">
+											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
+												class="fa fa-heart"></i></a> <a
+												href="/Online_Store_Jsp_Servlet/client/product/details?id=${product.id}"><i
+												class="fa fa-search"></i></a>
+										</div>
 									</div>
-								</div>
-								<div class="product-price">
-									<h3>
-										<span>$</span>99
-									</h3>
-									<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
-										ngay</a>
+
+									<div class="product-price">
+										<h3>
+											<span>$</span>${product.price}
+										</h3>
+										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
+											ngay</a>
+									</div>
 								</div>
 							</div>
-						</div>
+
+						</c:forEach>
 
 					</div>
 
@@ -224,22 +177,28 @@
 		<div class="container-fluid">
 			<div class="brand-slider">
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-1.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-1.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-2.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-2.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-3.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-3.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-4.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-4.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-5.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-5.png"
+						alt="">
 				</div>
 				<div class="brand-item">
-					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-6.png" alt="">
+					<img src="/Online_Store_Jsp_Servlet/client/static/img/brand-6.png"
+						alt="">
 				</div>
 			</div>
 		</div>

@@ -40,11 +40,12 @@
 
 								<div class="right__inputWrapper">
 									<label for="title">Tên sản phẩm</label> <input type="text"
-										placeholder="Tên sản phẩm" name="name">
+										name="name" placeholder="Tên sản phẩm">
 								</div>
 
 								<div class="right__inputWrapper">
-									<label for="title">Thuộc danh mục</label> <select id="select" name="id_category">
+									<label for="title">Thuộc danh mục</label> <select id="select"
+										name="id_category">
 										<c:forEach var="category" items="${listCategory}">
 											<option value="${category.id}">${category.name}</option>
 										</c:forEach>
@@ -53,17 +54,17 @@
 
 								<div class="right__inputWrapper">
 									<label for="title">Giá sản phẩm</label> <input type="text"
-										placeholder="Giá sản phẩm" name="price">
+										name="price" placeholder="Giá sản phẩm">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Còn lại</label> <input type="text"
-										placeholder="Còn lại" name="amount">
+										name="amount" placeholder="Còn lại">
 								</div>
-								
+
 								<div class="right__inputWrapper">
 									<label for="title">Rating</label> <input type="text"
-										placeholder="Rating" name="rating">
+										name="rating" placeholder="Rating">
 								</div>
 
 								<div class="right__inputWrapper">
