@@ -67,58 +67,31 @@
 							<div class="col-md-5">
 								<div class="product-slider-single normal-slider">
 									<img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
+										src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
 										alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-3.jpg"
-										alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-5.jpg"
-										alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-7.jpg"
-										alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-9.jpg"
-										alt="Product Image"> <img
-										src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
+										src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
 										alt="Product Image">
 								</div>
 
 								<div class="product-slider-single-nav normal-slider">
 									<div class="slider-nav-img">
 										<img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
+											src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
 											alt="Product Image">
 									</div>
 									<div class="slider-nav-img">
 										<img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-3.jpg"
+											src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
 											alt="Product Image">
 									</div>
-									<div class="slider-nav-img">
-										<img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-5.jpg"
-											alt="Product Image">
-									</div>
-									<div class="slider-nav-img">
-										<img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-7.jpg"
-											alt="Product Image">
-									</div>
-									<div class="slider-nav-img">
-										<img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-9.jpg"
-											alt="Product Image">
-									</div>
-									<div class="slider-nav-img">
-										<img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
-											alt="Product Image">
-									</div>
+
 								</div>
 							</div>
 
 							<div class="col-md-7">
 								<div class="product-content">
 									<div class="title">
-										<h2>Tên sản phẩm</h2>
+										<h2>${product.name}</h2>
 									</div>
 
 									<div class="ratting">
@@ -205,7 +178,7 @@
 											<div class="col-sm-9">
 												<textarea placeholder="Đánh giá"></textarea>
 											</div>
-											
+
 											<div class="col-sm-12">
 												<button>Gửi đi</button>
 											</div>

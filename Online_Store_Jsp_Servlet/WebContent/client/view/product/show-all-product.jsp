@@ -124,8 +124,8 @@
 									</div>
 
 									<div class="product-image">
-										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-1.jpg"
+										<a href="/Online_Store_Jsp_Servlet/client/product/details?id=${product.id}"> <img
+											src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
 											alt="Product Image">
 										</a>
 

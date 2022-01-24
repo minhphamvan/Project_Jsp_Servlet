@@ -30,7 +30,7 @@
 
 						<div class="right__formWrapper">
 							<form action="/Online_Store_Jsp_Servlet/admin/product/update"
-								method="post">
+								method="post" enctype="multipart/form-data">
 								<div class="right__inputWrapper">
 									<label for="title">Mã sản phẩm</label> <input type="text" name="id"
 										placeholder="Mã sản phẩm" value="${product.id}" readonly>
@@ -38,8 +38,8 @@
 
 								<div class="right__inputWrapper">
 									<label for="image">Hình ảnh</label>
-									<td data-label="Hình ảnh"><img src="images/avatar1.png"
-										alt=""></td> <input type="file" name="image">
+									<td data-label="Hình ảnh"><img src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
+										alt=""></td> <input type="file" name="image" accept="image/*">
 								</div>
 
 								<div class="right__inputWrapper">

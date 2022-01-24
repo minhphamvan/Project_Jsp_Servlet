@@ -29,13 +29,13 @@
 						<p class="right__desc">Thêm sản phẩm</p>
 
 						<div class="right__formWrapper">
+
 							<form action="/Online_Store_Jsp_Servlet/admin/product/add"
-								method="post">
+								method="post" enctype="multipart/form-data">
+
 								<div class="right__inputWrapper">
 									<label for="image">Hình ảnh</label>
-									<td data-label="Hình ảnh"><img
-										src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
-										alt=""></td> <input type="file" name="image">
+									<td data-label="Hình ảnh"><input type="file" name="image" accept="image/*"></td>
 								</div>
 
 								<div class="right__inputWrapper">
@@ -74,7 +74,9 @@
 								</div>
 
 								<button class="btn" type="submit">Cập nhật</button>
+
 							</form>
+
 						</div>
 
 						<a href="/Online_Store_Jsp_Servlet/admin/product/show-all"
