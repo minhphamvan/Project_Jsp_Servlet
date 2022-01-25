@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,47 +34,55 @@
 										<tr>
 											<th>Mã</th>
 											<th>Hình ảnh</th>
-											<th>Họ tên</th>
-											<th>Địa chỉ</th>
-											<th>Email</th>
-											<th>Số điện thoại</th>
 											<th>Tên đăng nhập</th>
 											<th>Mật khẩu</th>
+											<th>Họ tên</th>
+											<th>Email</th>
+											<th>Số điện thoại</th>
+											<th>Địa chỉ</th>
 											<th>Vai trò</th>
-											<th>Chi tiết</th>
 											<th>Sửa</th>
 											<th>Xoá</th>
 										</tr>
 									</thead>
 
 									<tbody>
-										<tr>
-											<td data-label="Mã">1</td>
-											<td data-label="Hình ảnh"><img src="/Online_Store_Jsp_Servlet/admin/static/images/avatar1.png"
-												alt=""></td>
-											<td data-label="Họ tên">Trần Tuấn Anh</td>
-											<td data-label="Địa chỉ">Vĩnh Phúc</td>
-											<td data-label="Email">trantuananh@gmail.com</td>
-											<td data-label="Số điện thoại">0984.586.888</td>
-											<td data-label="Tên đăng nhập">trantuananh</td>
-											<td data-label="Mật khẩu">trantuananh</td>
-											<td data-label="Vai trò">Người dùng</td>
-											<td data-label="Chi tiết" class="right__iconTable"><a
-												href="details-user.html"><img src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
-													alt=""></a></td>
-											<td data-label="Sửa" class="right__iconTable"><a
-												href="details-user.html"><img src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-edit.svg"
-													alt=""></a></td>
-											<td data-label="Xoá" class="right__iconTable"><a
-												href="#"><img src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-trash-black.svg" alt=""></a>
-											</td>
-										</tr>
+
+										<c:forEach var="user" items="${listUser}">
+											<tr>
+												<td data-label="Mã">${user.id}</td>
+												<td data-label="Hình ảnh"><img
+													src="/Online_Store_Jsp_Servlet/show-image?image=${user.image}"
+													alt=""></td>
+												<td data-label="Tên đăng nhập">${user.username}</td>
+												<td data-label="Mật khẩu">${user.password}</td>
+												<td data-label="Họ và tên">${user.fullName}</td>
+												<td data-label="Email">${user.email}</td>
+												<td data-label="Số điện thoại">${user.phoneNumber}</td>
+												<td data-label="Địa chỉ">${user.address}</td>
+												<td data-label="Vai trò">${user.role}</td>
+												<td data-label="Active">${user.active}</td>
+												<td data-label="Đăng kí lúc">${user.registerOn}</td>
+
+												<td data-label="Chi tiết" class="right__iconTable"><a
+													href="/Online_Store_Jsp_Servlet/admin/user/details?id=${user.id}"><img
+														src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
+														alt=""></a></td>
+
+												<td data-label="Xoá" class="right__iconTable"><a
+													href="/Online_Store_Jsp_Servlet/admin/user/delete?id=${user.id}"><img
+														src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-trash-black.svg"
+														alt=""></a></td>
+											</tr>
+										</c:forEach>
 
 									</tbody>
 								</table>
 
 								<a href="add-user.html" class="right__tableMore"> Thêm người
-									dùng<img src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg" alt="">
+									dùng<img
+									src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
+									alt="">
 								</a>
 							</div>
 						</div>

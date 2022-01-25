@@ -15,8 +15,7 @@ public class User {
 	private String image;
 	private String username;
 	private String password;
-
-	private Date registerOn;
+	
 	private String fullName;
 	private String email;
 	private String phoneNumber;
@@ -24,4 +23,5 @@ public class User {
 	
 	private String role;
 	private boolean active;
+	private Date registerOn;
 }
