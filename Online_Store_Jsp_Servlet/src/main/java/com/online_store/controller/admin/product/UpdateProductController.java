@@ -48,7 +48,7 @@ public class UpdateProductController extends HttpServlet {
 			DiskFileItemFactory factory = new DiskFileItemFactory();
 
 			// Đổi thành đường dẫn thư mục, lưu tạm thời file upload lên
-			factory.setRepository(new File("D:\\Project_Jsp_Servlet\\Folder Save File Upload"));
+			factory.setRepository(new File("D:\\Project_Jsp_Servlet\\Online_Store_Jsp_Servlet\\WebContent\\Folder Save File Upload"));
 
 			// Đọc request từ client gửi lên trong form upload
 			// Danh sách các trường input từ form client được gọi là FileItem
@@ -73,7 +73,7 @@ public class UpdateProductController extends HttpServlet {
 						String image = System.currentTimeMillis() + ext; // Tên file ảnh mới
 
 						// Tạo file để lưu trữ trên server
-						final String UPLOAD_FOLDER = "D:\\Project_Jsp_Servlet\\Folder Save File Upload\\images";
+						final String UPLOAD_FOLDER = "D:\\Project_Jsp_Servlet\\Online_Store_Jsp_Servlet\\WebContent\\Folder Save File Upload\\images";
 						File file = new File(UPLOAD_FOLDER + File.separator + image);
 
 						// Ghi dữ liệu upload lên vào file

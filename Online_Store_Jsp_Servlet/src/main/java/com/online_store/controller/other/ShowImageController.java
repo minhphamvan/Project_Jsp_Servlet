@@ -21,7 +21,7 @@ public class ShowImageController extends HttpServlet {
 		String image = req.getParameter("image");
 
 		if (image != null) {
-			final String UPLOAD_FOLDER = "D:\\Project_Jsp_Servlet\\Folder Save File Upload\\images";
+			final String UPLOAD_FOLDER = "D:\\Project_Jsp_Servlet\\Online_Store_Jsp_Servlet\\WebContent\\Folder Save File Upload\\images";
 
 			File file = new File(UPLOAD_FOLDER + File.separator + image);
 
