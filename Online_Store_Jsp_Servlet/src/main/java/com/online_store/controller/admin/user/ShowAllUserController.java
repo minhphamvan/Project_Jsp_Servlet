@@ -15,7 +15,7 @@ import com.online_store.model.Product;
 import com.online_store.model.User;
 
 @WebServlet(urlPatterns = {"/admin/user/show-all"})
-public class ShowAllProductController extends HttpServlet {
+public class ShowAllUserController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserDaoImpl userDaoImpl = new UserDaoImpl();

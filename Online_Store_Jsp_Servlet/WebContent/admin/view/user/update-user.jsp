@@ -24,48 +24,50 @@
 				<div class="right">
 					<div class="right__content">
 						<div class="right__title">Bảng điều khiển</div>
-						<p class="right__desc">Thêm người dùng</p>
+						<p class="right__desc">Chi tiết người dùng</p>
 						<div class="right__formWrapper">
 							
-							<form action="/Online_Store_Jsp_Servlet/admin/user/add" method="post" enctype="multipart/form-data">
+							<form action="/Online_Store_Jsp_Servlet/admin/user/update" method="post" enctype="multipart/form-data">
 								<div class="right__inputWrapper">
-									<label for="title" hidden="">Mã</label> <input type="text"
-										placeholder="Mã" name="id" hidden>
+									<label for="title">Mã</label> <input type="text"
+										placeholder="Mã" name="id" readonly="true" value="${user.id}">
 								</div>
 
 								<div class="right__inputWrapper">
-									<label for="image">Hình ảnh</label> <input type="file"
-										name="image" accept="image/*">
+									<label for="image">Hình ảnh</label>
+									<td data-label="Hình ảnh"><img src="/Online_Store_Jsp_Servlet/show-image?image=${user.image}"
+										alt=""></td> <input type="file" name="image" accept="image/*">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Tên tài khoản</label> <input type="text"
-										placeholder="Tên tài khoản" name="username">
+										placeholder="Tên tài khoản" name="username" value="${user.username}">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Mật khẩu</label> <input type="text"
-										placeholder="Mật khẩu" name="password">
+										placeholder="Mật khẩu" name="password" value="${user.password}">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Họ tên</label> <input type="text"
-										placeholder="Họ tên" name="full_name">
+										placeholder="Họ tên" name="full_name" value="${user.fullName}">
 								</div>
+								
 
 								<div class="right__inputWrapper">
 									<label for="title">Email</label> <input type="text"
-										placeholder="Email" name="email">
+										placeholder="Email" name="email" value="${user.email}">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Số điện thoại</label> <input type="text"
-										placeholder="Số điện thoại" name="phone_number">
+										placeholder="Số điện thoại" name="phone_number" value="${user.phoneNumber}">
 								</div>
 
 								<div class="right__inputWrapper">
 									<label for="title">Địa chỉ</label> <input type="text"
-										placeholder="Địa chỉ" name="address">
+										placeholder="Địa chỉ" name="address" value="${user.address}">
 								</div>
 
 								<div class="right__inputWrapper">
@@ -74,8 +76,20 @@
 										<option value="ROLE_ADMIN">Quản trị viên</option>
 									</select>
 								</div>
+								
+								<div class="right__inputWrapper">
+									<label for="title">Đăng kí lúc</label> <input type="text"
+										placeholder="Đăng kí lúc" name="register_on" value="${user.registerOn}" readonly="readonly">
+								</div>
+								
+								<div class="right__inputWrapper">
+									<label for="title">Active</label> <select id="active" name="active">
+										<option value="true">Active</option>
+										<option value="false">Block</option>
+									</select>
+								</div>
 
-								<button class="btn" type="submit">Thêm</button>
+								<button class="btn" type="submit">Cập nhật</button>
 							</form>
 						</div>
 
