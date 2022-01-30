@@ -14,7 +14,7 @@ import com.online_store.dao.impl.ProductDaoImpl;
 import com.online_store.model.Category;
 import com.online_store.model.Product;
 
-@WebServlet(urlPatterns = { "/client/product/details" })
+@WebServlet(urlPatterns = { "/product/details" })
 public class DetailsProductController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.online_store.dao.impl.ProductDaoImpl;
 import com.online_store.model.Product;
 
-@WebServlet(urlPatterns = {"/client/product/show-all"})
+@WebServlet(urlPatterns = {"/product/show-all"})
 public class ShowAllProductController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

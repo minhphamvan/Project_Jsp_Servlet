@@ -46,12 +46,11 @@
 	<div class="breadcrumb-wrap">
 		<div class="container-fluid">
 			<ul class="breadcrumb">
-				<li class="breadcrumb-item"><a th:href="@{/index}">Trang
-						chủ</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/user/my-info}">Tài
-						khoản</a></li>
-				<li class="breadcrumb-item active"
-					th:text="'Thông tin chi tiết - ' + ${userDTO.name}"></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/user/my-account">Tài khoản</a></li>
+				<li class="breadcrumb-item active">${user.fullName}</li>
 			</ul>
 		</div>
 	</div>
@@ -71,74 +70,54 @@
 						<div aria-labelledby="account-nav">
 							<h4>Thông tin chi tiết</h4>
 
-							<form action="" method="post" enctype="multipart/form-data">
+							<form action="/Online_Store_Jsp_Servlet/user/my-account"
+								method="post" enctype="multipart/form-data">
 								<div class="row">
 
 									<div class="col-md-3"></div>
-									<div class="col-md-6">
-										<input class="form-control" type="text" placeholder="Mã"
-											hidden>
-									</div>
+									<div class="col-md-6"></div>
 									<div class="col-md-3"></div>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
-										<img alt="Image User" style="width: 100px; height: 100px">
-										<input type="file" name="imageFile">
+										<img alt="Image User" style="width: 100px; height: 100px"
+											src="/Online_Store_Jsp_Servlet/show-image?image=${user.image}">
+										<input type="file" name="image" accept="image/*">
 									</div>
 									<div class="col-md-3"></div>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
 										<label>Tên đăng nhập</label> <input class="form-control"
-											type="text" placeholder="Tên đăng nhập" readonly>
+											type="text" value="${user.username}" name="username" readonly>
 									</div>
 									<div class="col-md-3"></div>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
 										<label>Họ tên</label> <input class="form-control" type="text"
-											placeholder="Họ tên">
-									</div>
-									<div class="col-md-3"></div>
-
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
-										<input class="form-control" type="text" placeholder="Mật khẩu"
-											hidden>
-									</div>
-									<div class="col-md-3"></div>
-
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
-										<label>Địa chỉ</label> <input class="form-control" type="text"
-											placeholder="Địa chỉ">
+											value="${user.fullName}" name="full_name">
 									</div>
 									<div class="col-md-3"></div>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
 										<label>Email</label> <input class="form-control" type="text"
-											placeholder="Email">
+											value="${user.email}" name="email">
 									</div>
 									<div class="col-md-3"></div>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
 										<label>Số điện thoại</label> <input class="form-control"
-											placeholder="Số điện thoại">
+											type="text" value="${user.phoneNumber}" name="phone_number">
 									</div>
 									<div class="col-md-3"></div>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
-										<input class="form-control" placeholder="Role" hidden>
-									</div>
-									<div class="col-md-3"></div>
-
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
-										<input class="form-control" placeholder="Active" hidden>
+										<label>Địa chỉ</label> <input class="form-control" type="text"
+											value="${user.address}" name="address">
 									</div>
 									<div class="col-md-3"></div>
 

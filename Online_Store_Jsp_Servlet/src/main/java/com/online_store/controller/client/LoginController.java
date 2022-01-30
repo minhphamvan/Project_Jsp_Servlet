@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
 			if (user.getRole().equals("ROLE_ADMIN")) {
 				resp.sendRedirect("/Online_Store_Jsp_Servlet/admin/dashboard");
 			} else if (user.getRole().equals("ROLE_USER")) {
-				resp.sendRedirect("/Online_Store_Jsp_Servlet/index");
+				resp.sendRedirect("/Online_Store_Jsp_Servlet/user/my-account");
 			}
 		} else {
 			RequestDispatcher rd = req.getRequestDispatcher("/client/view/login.jsp");
@@ -52,7 +52,7 @@ public class LoginController extends HttpServlet {
 				if (user.getRole().equals("ROLE_ADMIN")) {
 					resp.sendRedirect("/Online_Store_Jsp_Servlet/admin/dashboard");
 				} else if (user.getRole().equals("ROLE_USER")) {
-					resp.sendRedirect("/Online_Store_Jsp_Servlet/index");
+					resp.sendRedirect("/Online_Store_Jsp_Servlet/user/my-account");
 				}
 			} else { // Nếu sai mật khẩu
 				resp.sendRedirect("/Online_Store_Jsp_Servlet/login");

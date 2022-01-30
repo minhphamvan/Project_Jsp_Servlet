@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,10 +48,10 @@
 	<div class="breadcrumb-wrap">
 		<div class="container-fluid">
 			<ul class="breadcrumb">
-				<li class="breadcrumb-item"><a th:href="@{/index}">Trang
-						chủ</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/user/my-info}">Tài
-						khoản</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/user/my-account">Tài khoản</a></li>
 				<li class="breadcrumb-item active">Đổi mật khẩu</li>
 			</ul>
 		</div>
@@ -70,7 +72,8 @@
 						<div aria-labelledby="account-nav">
 							<h4>Đổi mật khẩu</h4>
 
-							<form th:action="@{/user/update-password}" method="post">
+							<form action="/Online_Store_Jsp_Servlet/user/change-password"
+								method="post">
 								<div class="row">
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
@@ -85,6 +88,14 @@
 											placeholder="Mật khẩu mới">
 									</div>
 									<div class="col-md-3"></div>
+
+									<c:if test="${message != null}">
+										<div class="col-md-3"></div>
+										<div class="col-md-6">
+											<p>${message}</p>
+										</div>
+										<div class="col-md-3"></div>
+									</c:if>
 
 									<div class="col-md-3"></div>
 									<div class="col-md-6">
