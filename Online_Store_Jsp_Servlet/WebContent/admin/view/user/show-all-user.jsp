@@ -35,15 +35,12 @@
 											<th>Mã</th>
 											<th>Hình ảnh</th>
 											<th>Tên đăng nhập</th>
-
+											<th>Mật khẩu</th>
 											<th>Họ tên</th>
 											<th>Email</th>
 											<th>Số điện thoại</th>
 											<th>Địa chỉ</th>
 											<th>Vai trò</th>
-											<th>Active</th>
-											<th>Đăng kí lúc</th>
-											
 											<th>Sửa</th>
 											<th>Xoá</th>
 										</tr>
@@ -58,6 +55,7 @@
 													src="/Online_Store_Jsp_Servlet/show-image?image=${user.image}"
 													alt=""></td>
 												<td data-label="Tên đăng nhập">${user.username}</td>
+												<td data-label="Mật khẩu">${user.password}</td>
 												<td data-label="Họ và tên">${user.fullName}</td>
 												<td data-label="Email">${user.email}</td>
 												<td data-label="Số điện thoại">${user.phoneNumber}</td>
@@ -67,7 +65,7 @@
 												<td data-label="Đăng kí lúc">${user.registerOn}</td>
 
 												<td data-label="Chi tiết" class="right__iconTable"><a
-													href="/Online_Store_Jsp_Servlet/admin/user/update?id=${user.id}"><img
+													href="/Online_Store_Jsp_Servlet/admin/user/details?id=${user.id}"><img
 														src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
 														alt=""></a></td>
 
@@ -81,7 +79,7 @@
 									</tbody>
 								</table>
 
-								<a href="/Online_Store_Jsp_Servlet/admin/user/add" class="right__tableMore"> Thêm người
+								<a href="add-user.html" class="right__tableMore"> Thêm người
 									dùng<img
 									src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
 									alt="">

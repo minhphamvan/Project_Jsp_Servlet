@@ -23,5 +23,5 @@ public class User {
 	
 	private String role;
 	private boolean active;
-	private String registerOn;
+	private Date registerOn;
 }
