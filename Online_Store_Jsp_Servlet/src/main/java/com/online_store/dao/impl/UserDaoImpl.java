@@ -114,7 +114,35 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User getUserByUsername(String username) {
-		// TODO Auto-generated method stub
+		try {
+			String sql = "SELECT * FROM user WHERE username = ?";
+
+			PreparedStatement preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, username);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				String image = resultSet.getString("image");
+				String password = resultSet.getString("password");
+				String fullName = resultSet.getString("full_name");
+				String email = resultSet.getString("email");
+				String phoneNumber = resultSet.getString("phone_number");
+				String address = resultSet.getString("address");
+				String role = resultSet.getString("role");
+				boolean active = resultSet.getBoolean("active");
+				String registerOn = resultSet.getString("register_on");
+
+				User user = new User(id, image, username, password, fullName, email, phoneNumber, address, role, active,
+						registerOn);
+
+				return user;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return null;
 	}
 

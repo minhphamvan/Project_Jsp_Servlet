@@ -92,7 +92,7 @@
 					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-tag.svg"
 					alt="">Quay lại trang chủ</a></li>
 
-			<li class="left__menuItem"><a class="left__title"><img
+			<li class="left__menuItem"><a class="left__title" href="/Online_Store_Jsp_Servlet/logout"><img
 					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-logout.svg"
 					alt="">Đăng Xuất</a></li>
 		</ul>
