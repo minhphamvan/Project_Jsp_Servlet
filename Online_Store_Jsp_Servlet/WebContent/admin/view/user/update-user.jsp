@@ -95,10 +95,13 @@
 									<label for="title">Active</label> <select id="active"
 										name="active">
 										<c:if test="${user.active == true}">
-											<option value="true">Active</option>
-										</c:if>
-										<c:if test="${user.active == false}">
+											<option value="true" selected="true">Active</option>
 											<option value="false">Block</option>
+										</c:if>
+										
+										<c:if test="${user.active == false}">
+											<option value="true">Active</option>
+											<option value="false" selected="true">Block</option>
 										</c:if>
 									</select>
 								</div>
