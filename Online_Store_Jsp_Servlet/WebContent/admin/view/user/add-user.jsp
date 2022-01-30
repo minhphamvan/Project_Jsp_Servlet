@@ -27,15 +27,10 @@
 						<p class="right__desc">Thêm người dùng</p>
 						<div class="right__formWrapper">
 							
-							<form action="/Online_Store_Jsp_Servlet/admin/user/add" method="post">
-								<div class="right__inputWrapper">
-									<label for="title">Mã</label> <input type="text"
-										placeholder="Mã" name="id">
-								</div>
-
+							<form action="/Online_Store_Jsp_Servlet/admin/user/add" method="post" enctype="multipart/form-data">
 								<div class="right__inputWrapper">
 									<label for="image">Hình ảnh</label> <input type="file"
-										name="image">
+										name="image" accept="image/*">
 								</div>
 
 								<div class="right__inputWrapper">
@@ -69,7 +64,7 @@
 								</div>
 
 								<div class="right__inputWrapper">
-									<label for="title">Vai trò</label> <select id="select">
+									<label for="title">Vai trò</label> <select id="select" name="role">
 										<option value="ROLE_USER">Khách hàng</option>
 										<option value="ROLE_ADMIN">Quản trị viên</option>
 									</select>
@@ -79,7 +74,7 @@
 							</form>
 						</div>
 
-						<a href="show-all-user.html" class="right__tableMore"> Xem tất
+						<a href="/Online_Store_Jsp_Servlet/admin/user/show-all" class="right__tableMore"> Xem tất
 							cả người dùng<img
 							src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
 							alt="">
