@@ -35,7 +35,6 @@
 											<th>Mã</th>
 											<th>Hình ảnh</th>
 											<th>Tên đăng nhập</th>
-											<th>Mật khẩu</th>
 											<th>Họ tên</th>
 											<th>Email</th>
 											<th>Số điện thoại</th>
@@ -57,7 +56,6 @@
 													src="/Online_Store_Jsp_Servlet/show-image?image=${user.image}"
 													alt=""></td>
 												<td data-label="Tên đăng nhập">${user.username}</td>
-												<td data-label="Mật khẩu">${user.password}</td>
 												<td data-label="Họ và tên">${user.fullName}</td>
 												<td data-label="Email">${user.email}</td>
 												<td data-label="Số điện thoại">${user.phoneNumber}</td>
