@@ -67,42 +67,41 @@
 						<div class="login-form">
 							<div class="row">
 								<div class="col-md-6">
-									<label>Hình ảnh</label> <input type="file" name="imageFile">
+									<label>Hình ảnh</label> <input type="file" name="image"
+										accept="image/*">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text"
-										placeholder="Người dùng" hidden>
+									<input class="form-control" type="text" hidden>
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" placeholder="Active"
-										hidden>
-								</div>
-
-								<div class="col-md-6">
-									<label>Họ tên</label> <input class="form-control" type="text"
-										placeholder="Họ tên">
-								</div>
-								<div class="col-md-6">
-									<label>Địa chỉ</label> <input class="form-control" type="text"
-										placeholder="Địa chỉ">
-								</div>
-
-								<div class="col-md-6">
-									<label>Email</label> <input class="form-control" type="text"
-										placeholder="Email">
-								</div>
-								<div class="col-md-6">
-									<label>Số điện thoại</label> <input class="form-control"
-										type="text" placeholder="Số điện thoại">
+									<input class="form-control" type="text" hidden>
 								</div>
 
 								<div class="col-md-6">
 									<label>Tên đăng nhập</label> <input class="form-control"
-										type="text" placeholder="Tên đăng nhập">
+										type="text" placeholder="Tên đăng nhập" name="username">
 								</div>
 								<div class="col-md-6">
 									<label>Mật khẩu</label> <input class="form-control" type="text"
-										placeholder="Mật khẩu">
+										placeholder="Mật khẩu" name="password">
+								</div>
+
+								<div class="col-md-6">
+									<label>Họ tên</label> <input class="form-control" type="text"
+										placeholder="Họ tên" name="full_name">
+								</div>
+								<div class="col-md-6">
+									<label>Email</label> <input class="form-control" type="text"
+										placeholder="Email" name="email">
+								</div>
+
+								<div class="col-md-6">
+									<label>Số điện thoại</label> <input class="form-control"
+										type="text" placeholder="Số điện thoại" name="phone_number">
+								</div>
+								<div class="col-md-6">
+									<label>Địa chỉ</label> <input class="form-control" type="text"
+										placeholder="Địa chỉ" name="address">
 								</div>
 
 								<div class="col-md-12">
