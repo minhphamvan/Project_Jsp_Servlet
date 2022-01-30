@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("/client/register.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("/client/view/register.jsp");
 		rd.forward(req, resp);
 	}
 }
