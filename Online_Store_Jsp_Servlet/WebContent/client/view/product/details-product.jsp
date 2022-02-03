@@ -130,8 +130,8 @@
 									</div>
 
 									<div class="action">
-										<a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Thêm
-											vào giỏ</a> <a class="btn" href="#"><i
+										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Thêm
+											vào giỏ</a> <a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
 											class="fa fa-shopping-bag"></i>Mua ngay</a>
 									</div>
 								</div>
@@ -212,7 +212,7 @@
 											alt="Product Image">
 										</a>
 										<div class="product-action">
-											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
+											<a href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
 												class="fa fa-heart"></i></a> <a href="#"><i
 												class="fa fa-search"></i></a>
 										</div>
@@ -221,7 +221,7 @@
 										<h3>
 											<span>$</span>99
 										</h3>
-										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
+										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Mua
 											ngay</a>
 									</div>
 								</div>
@@ -243,7 +243,7 @@
 											alt="Product Image">
 										</a>
 										<div class="product-action">
-											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
+											<a href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
 												class="fa fa-heart"></i></a> <a href="#"><i
 												class="fa fa-search"></i></a>
 										</div>
@@ -252,7 +252,7 @@
 										<h3>
 											<span>$</span>99
 										</h3>
-										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
+										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Mua
 											ngay</a>
 									</div>
 								</div>

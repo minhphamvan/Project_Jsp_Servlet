@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,30 +73,40 @@
 								</thead>
 
 								<tbody class="align-middle">
-									<tr>
-										<td>
-											<div class="img">
-												<a href="#"><img src="" alt="Image"></a>
-												<p>Áo sơ mi</p>
-											</div>
-										</td>
-										<td>$99</td>
-										<td>
-											<div class="qty">
-												<button class="btn-minus">
-													<i class="fa fa-minus"></i>
-												</button>
-												<input type="text" value="1">
-												<button class="btn-plus">
-													<i class="fa fa-plus"></i>
-												</button>
-											</div>
-										</td>
-										<td>$99</td>
-										<td><button>
-												<i class="fa fa-trash"></i>
-											</button></td>
-									</tr>
+
+									<c:forEach var="entry" items="${sessionScope.cart}">
+										<tr>
+											<td>
+												<div class="img">
+													<a
+														href="/Online_Store_Jsp_Servlet/product/details?id=${entry.getValue().getProduct().getId()}"><img
+														src="/Online_Store_Jsp_Servlet/show-image?image=${entry.getValue().getProduct().getImage()}"
+														alt="Image">
+														<p>${entry.getValue().getProduct().getName()}</p></a>
+
+												</div>
+											</td>
+											<td>$${entry.getValue().getProduct().getPrice()}</td>
+											<td>
+												<div class="qty">
+													<button class="btn-minus">
+														<i class="fa fa-minus"></i>
+													</button>
+													<input type="text"
+														value="${entry.getValue().getQuantity()}">
+													<button class="btn-plus">
+														<i class="fa fa-plus"></i>
+													</button>
+												</div>
+											</td>
+											<td>$${entry.getValue().getQuantity() *
+												entry.getValue().getProduct().getPrice()}</td>
+											<td><button>
+													<i class="fa fa-trash"></i>
+												</button></td>
+										</tr>
+									</c:forEach>
+
 								</tbody>
 							</table>
 						</div>
