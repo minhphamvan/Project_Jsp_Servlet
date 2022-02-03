@@ -1,0 +1,13 @@
+- Admin:  show all bill, details bill
+
+- Client: Search by name, Search by price, Search by category
+- Client: Phân trang
+
+- User:  write review
+- Admin: show all review, details review
+
+
+- Admin: add coupon, show all coupon
+- User:  apply coupon
+
+
