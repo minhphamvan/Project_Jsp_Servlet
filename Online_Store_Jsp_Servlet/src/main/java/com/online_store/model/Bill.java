@@ -18,13 +18,13 @@ public class Bill {
 	private String shippingAddress;
 	private String note;
 
-	private Date orderDate;
+	private String orderDate;
 	private double orderTotal;
 	private String paymentMethod;
 	private String status;
 
 	public Bill(User user, String recipientName, String recipientPhone, String shippingAddress, String note,
-			Date orderDate, double orderTotal, String paymentMethod, String status) {
+			String orderDate, double orderTotal, String paymentMethod, String status) {
 		super();
 		this.user = user;
 		this.recipientName = recipientName;

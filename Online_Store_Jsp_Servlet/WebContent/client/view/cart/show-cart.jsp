@@ -86,7 +86,9 @@
 
 												</div>
 											</td>
+
 											<td>$${entry.getValue().getProduct().getPrice()}</td>
+
 											<td>
 												<div class="qty">
 													<button class="btn-minus">
@@ -99,11 +101,16 @@
 													</button>
 												</div>
 											</td>
+
 											<td>$${entry.getValue().getQuantity() *
 												entry.getValue().getProduct().getPrice()}</td>
-											<td><button>
-													<i class="fa fa-trash"></i>
-												</button></td>
+
+											<td><a
+												href="/Online_Store_Jsp_Servlet/cart/delete-product?id=${entry.getValue().getProduct().getId()}">
+													<button>
+														<i class="fa fa-trash"></i>
+													</button>
+											</a></td>
 										</tr>
 									</c:forEach>
 
@@ -128,18 +135,21 @@
 									<div class="cart-content">
 										<h1>Giỏ hàng</h1>
 										<p>
-											Tổng tiền<span>$99</span>
+											Tổng tiền<span>$${orderTotal}</span>
 										</p>
 										<p>
 											Phí giao hàng<span>$1</span>
 										</p>
 										<h2>
-											Tổng cộng<span>$100</span>
+											Tổng cộng<span>$${orderTotal + 1}</span>
 										</h2>
 									</div>
+
 									<div class="cart-btn">
-										<button>Cập nhật</button>
-										<button>Thanh toán</button>
+
+										<a href="/Online_Store_Jsp_Servlet/user/check-out">
+											<button style="margin-left: 125px">Thanh toán</button>
+										</a>
 									</div>
 								</div>
 							</div>

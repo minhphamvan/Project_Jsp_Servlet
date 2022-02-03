@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!-- Top bar Start -->
 <div class="top-bar">
@@ -65,7 +66,7 @@
 <div class="bottom-bar">
 	<div class="container-fluid">
 		<div class="row align-items-center">
-			
+
 			<div class="col-md-3">
 				<div class="logo">
 					<a href="index.html"> <img
@@ -74,7 +75,7 @@
 					</a>
 				</div>
 			</div>
-			
+
 			<div class="col-md-6">
 				<div class="search">
 					<input type="text" placeholder="Tìm kiếm">
@@ -83,17 +84,24 @@
 					</button>
 				</div>
 			</div>
-			
+
 			<div class="col-md-3">
 				<div class="user">
-					<a href="wishlist.html" class="btn wishlist"> <i
-						class="fa fa-heart"></i> <span>(0)</span>
-					</a> <a href="cart.html" class="btn cart"> <i
-						class="fa fa-shopping-cart"></i> <span>(0)</span>
+					<a href="/Online_Store_Jsp_Servlet/wish-list" class="btn wishlist">
+						<i class="fa fa-heart"></i> <span>(0)</span>
+					</a> <a href="/Online_Store_Jsp_Servlet/cart" class="btn cart"> <i
+						class="fa fa-shopping-cart"></i> <c:choose>
+							<c:when test="${sessionScope.cart == null}">
+								<span>(0)</span>
+							</c:when>
+							<c:otherwise>
+								<span>(${sessionScope.cart.size()})</span>
+							</c:otherwise>
+						</c:choose>
 					</a>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 </div>

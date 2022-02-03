@@ -1,4 +1,4 @@
-package com.online_store.controller.client;
+package com.online_store.controller.client.cart;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -32,31 +32,32 @@ public class AddToCartController extends HttpServlet {
 			billProduct.setProduct(product);
 			billProduct.setQuantity(1);
 			billProduct.setSubTotal(product.getPrice());
-			
+
 			Map<Integer, BillProduct> map = new HashMap<Integer, BillProduct>();
 			map.put(id, billProduct);
-			
+
 			httpSession.setAttribute("cart", map);
 		} else { // Nếu có session giỏ hàng rồi
 			Map<Integer, BillProduct> map = (Map<Integer, BillProduct>) object;
-			
+
 			BillProduct billProduct = map.get(id);
-			
-			if(billProduct == null) {
+
+			if (billProduct == null) {
 				billProduct = new BillProduct();
-				
+
 				billProduct.setProduct(product);
 				billProduct.setQuantity(1);
 				billProduct.setSubTotal(product.getPrice());
-				
+
 				map.put(id, billProduct);
-			}else {
+			} else {
 				billProduct.setQuantity(billProduct.getQuantity() + 1);
+				billProduct.setSubTotal(billProduct.getQuantity() * product.getPrice());
 			}
-			
+
 			httpSession.setAttribute("cart", map);
 		}
-		
+
 		resp.sendRedirect("/Online_Store_Jsp_Servlet/cart");
 	}
 }

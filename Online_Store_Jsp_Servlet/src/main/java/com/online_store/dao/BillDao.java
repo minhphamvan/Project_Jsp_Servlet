@@ -13,7 +13,7 @@ public interface BillDao {
 
 	public Bill getBillById(int id);
 	
-	public List<Bill> getBillByIdUser(int idUser);
+	public List<Bill> getAllBillByIdUser(int idUser);
 
 	public List<Bill> getAllBill();
 

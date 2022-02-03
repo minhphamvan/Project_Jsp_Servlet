@@ -11,5 +11,5 @@ public interface BillProductDao {
 
 	public void deleteBillProduct(int id);
 
-	public List<BillProduct> getAllProductByIdBill(int idBill);
+	public List<BillProduct> getBillProductByIdBill(int idBill);
 }

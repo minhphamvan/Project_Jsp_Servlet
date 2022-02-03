@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,8 +73,10 @@
 								<table class="table table-bordered">
 									<thead class="thead-dark">
 										<tr>
-											<th>Mã đơn</th>
-											<th>Thời gian nhận</th>
+											<th>Mã</th>
+											<th>Người nhận</th>
+											<th>Số điện thoại</th>
+											<th>Địa chỉ</th>
 											<th>Ghi chú</th>
 											<th>Ngày đặt</th>
 											<th>Tổng tiền</th>
@@ -84,16 +87,23 @@
 									</thead>
 
 									<tbody>
-										<tr th:each="bill : ${billDTOs}">
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td><a><button class="btn">Xem</button></a></td>
-										</tr>
+
+										<c:forEach var="bill" items="${list}">
+											<tr>
+												<td>${bill.id}</td>
+												<td>${bill.recipientName}</td>
+												<td>${bill.recipientPhone}</td>
+												<td>${bill.shippingAddress}</td>
+												<td>${bill.note}</td>
+												<td>${bill.orderDate}</td>
+												<td>${bill.orderTotal}</td>
+												<td>${bill.paymentMethod}</td>
+												<td>${bill.status}</td>
+												<td><a
+													href="/Online_Store_Jsp_Servlet/user/bill/details?id=${bill.id}"><button
+															class="btn">Xem</button></a></td>
+											</tr>
+										</c:forEach>
 
 									</tbody>
 								</table>
