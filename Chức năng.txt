@@ -1,5 +1,7 @@
 - Admin:  show all bill, details bill
 
+- User: Remember me
+
 - Client: Search by name, Search by price, Search by category
 - Client: Phân trang
 
