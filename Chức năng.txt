@@ -2,6 +2,8 @@
 
 - User: Remember me
 
+- Login sử dụng Google
+
 - Client: Search by name, Search by price, Search by category
 - Client: Phân trang
 
