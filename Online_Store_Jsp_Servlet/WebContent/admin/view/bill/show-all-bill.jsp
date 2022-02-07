@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,44 +31,47 @@
 								<table>
 									<thead>
 										<tr>
-											<th>Mã đơn hàng</th>
-
-											<th>Tên khách hàng</th>
-											<th>Thời gian nhận</th>
+											<th>Mã đơn</th>
+											<th>Người đặt</th>
+											<th>Người nhận</th>
+											<th>Số điện thoại</th>
+											<th>Địa chỉ</th>
 											<th>Ghi chú</th>
-
 											<th>Ngày đặt</th>
 											<th>Tổng tiền</th>
 											<th>Thanh toán</th>
 											<th>Trạng thái</th>
-
 											<th>Chi tiết</th>
-
 										</tr>
 									</thead>
 
 									<tbody>
-										<tr>
-											<td data-label="Mã đơn hàng"></td>
-											<td data-label="Tên khách hàng"></td>
-											<td data-label="Thời gian nhận"></td>
-											<td data-label="Ghi chú"></td>
-											<td data-label="Ngày đặt"></td>
-											<td data-label="Tổng tiền"></td>
-											<td data-label="Phương thức thanh toán"></td>
-											<td data-label="Trạng thái"></td>
 
-											<td data-label="Chi tiết" class="right__iconTable"><a><img
-													src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
-													alt=""></a></td>
+										<c:forEach var="bill" items="${list}">
+											<tr>
+												<td data-label="Mã đơn">${bill.id}</td>
+												<td data-label="Người đặt">${bill.user.fullName}</td>
+												<td data-label="Người nhận">${bill.recipientName}</td>
+												<td data-label="Số điện thoại">${bill.recipientPhone}</td>
+												<td data-label="Địa chỉ">${bill.shippingAddress}</td>
+												<td data-label="Ghi chú">${bill.note}</td>
+												<td data-label="Ngày đặt">${bill.orderDate}</td>
+												<td data-label="Tổng tiền">${bill.orderTotal}</td>
+												<td data-label="Thanh toán">${bill.paymentMethod}</td>
+												<td data-label="Trạng thái">${bill.status}</td>
 
-										</tr>
+												<td data-label="Chi tiết" class="right__iconTable"><a
+													href="/Online_Store_Jsp_Servlet/admin/bill/details?id=${bill.id}"><img
+														src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
+														alt=""></a></td>
+											</tr>
+										</c:forEach>
 
 									</tbody>
 								</table>
 
 								<a class="right__tableMore"
-									style="width: 550px; padding-top: 15px;"> Thêm đơn hàng<img
+									style="width: 600px; padding-top: 15px;"> Thêm đơn hàng<img
 									src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-right-black.svg"
 									alt="">
 								</a>
