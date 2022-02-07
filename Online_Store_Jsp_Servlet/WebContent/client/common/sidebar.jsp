@@ -22,7 +22,7 @@
 	<div class="sidebar-widget widget-slider">
 		<div class="sidebar-slider normal-slider">
 
-			<c:forEach var="product" items="${listProduct}">
+			<c:forEach var="product" items="${list}">
 
 				<div class="product-item">
 					<div class="product-title">

@@ -17,9 +17,9 @@ public class ShowAllProductController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ProductDaoImpl productDaoImpl = new ProductDaoImpl();
-		List<Product> listProduct = productDaoImpl.getAllProduct();
+		List<Product> list = productDaoImpl.getAllProduct();
 		
-		req.setAttribute("listProduct", listProduct);
+		req.setAttribute("list", list);
 		
 		req.getRequestDispatcher("/client/view/product/show-all-product.jsp").forward(req, resp);
 	}

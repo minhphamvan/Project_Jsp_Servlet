@@ -22,9 +22,12 @@ public class DetailsProductController extends HttpServlet {
 		int id = Integer.valueOf(req.getParameter("id"));
 
 		ProductDaoImpl productDaoImpl = new ProductDaoImpl();
-		Product product = productDaoImpl.getProductById(id);
 		
+		Product product = productDaoImpl.getProductById(id);
 		req.setAttribute("product", product);
+		
+		List<Product> list = productDaoImpl.getAllProduct();		
+		req.setAttribute("list", list);
 
 		req.getRequestDispatcher("/client/view/product/details-product.jsp").forward(req, resp);
 	}

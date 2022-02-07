@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,8 +133,10 @@
 									</div>
 
 									<div class="action">
-										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Thêm
-											vào giỏ</a> <a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
+										<a class="btn"
+											href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
+											class="fa fa-shopping-cart"></i>Thêm vào giỏ</a> <a class="btn"
+											href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
 											class="fa fa-shopping-bag"></i>Mua ngay</a>
 									</div>
 								</div>
@@ -196,160 +201,49 @@
 
 						<div
 							class="row align-items-center product-slider product-slider-3">
-							<div class="col-lg-3">
-								<div class="product-item">
-									<div class="product-title">
-										<a href="#">Tên sản phẩm</a>
-										<div class="ratting">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<div class="product-image">
-										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
-											alt="Product Image">
-										</a>
-										<div class="product-action">
-											<a href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-												class="fa fa-heart"></i></a> <a href="#"><i
-												class="fa fa-search"></i></a>
-										</div>
-									</div>
-									<div class="product-price">
-										<h3>
-											<span>$</span>99
-										</h3>
-										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Mua
-											ngay</a>
-									</div>
-								</div>
-							</div>
 
-							<div class="col-lg-3">
-								<div class="product-item">
-									<div class="product-title">
-										<a href="#">Tên sản phẩm</a>
-										<div class="ratting">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<div class="product-image">
-										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
-											alt="Product Image">
-										</a>
-										<div class="product-action">
-											<a href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-												class="fa fa-heart"></i></a> <a href="#"><i
-												class="fa fa-search"></i></a>
-										</div>
-									</div>
-									<div class="product-price">
-										<h3>
-											<span>$</span>99
-										</h3>
-										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Mua
-											ngay</a>
-									</div>
-								</div>
-							</div>
+							<c:forEach var="product" items="${list}">
 
-							<div class="col-lg-3">
-								<div class="product-item">
-									<div class="product-title">
-										<a href="#">Tên sản phẩm</a>
-										<div class="ratting">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
+								<div class="col-lg-3">
+									<div class="product-item">
+										<div class="product-title">
+											<a
+												href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}">${product.name}</a>
+											<div class="ratting">
+												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+													class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+													class="fa fa-star"></i>
+											</div>
 										</div>
-									</div>
-									<div class="product-image">
-										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
-											alt="Product Image">
-										</a>
-										<div class="product-action">
-											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-												class="fa fa-heart"></i></a> <a href="#"><i
-												class="fa fa-search"></i></a>
+										<div class="product-image">
+											<a
+												href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}">
+												<img
+												src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
+												alt="Product Image">
+											</a>
+											<div class="product-action">
+												<a
+													href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
+													class="fa fa-cart-plus"></i></a> <a href="#"><i
+													class="fa fa-heart"></i></a> <a
+													href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}"><i
+													class="fa fa-search"></i></a>
+											</div>
 										</div>
-									</div>
-									<div class="product-price">
-										<h3>
-											<span>$</span>99
-										</h3>
-										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
-											ngay</a>
+										<div class="product-price">
+											<h3>
+												<span>$</span>${product.price}
+											</h3>
+											<a class="btn"
+												href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
+												class="fa fa-shopping-cart"></i>Mua ngay</a>
+										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="col-lg-3">
-								<div class="product-item">
-									<div class="product-title">
-										<a href="#">Tên sản phẩm</a>
-										<div class="ratting">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<div class="product-image">
-										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
-											alt="Product Image">
-										</a>
-										<div class="product-action">
-											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-												class="fa fa-heart"></i></a> <a href="#"><i
-												class="fa fa-search"></i></a>
-										</div>
-									</div>
-									<div class="product-price">
-										<h3>
-											<span>$</span>99
-										</h3>
-										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
-											ngay</a>
-									</div>
-								</div>
-							</div>
+							</c:forEach>
 
-							<div class="col-lg-3">
-								<div class="product-item">
-									<div class="product-title">
-										<a href="#">Tên sản phẩm</a>
-										<div class="ratting">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<div class="product-image">
-										<a href="product-detail.html"> <img
-											src="/Online_Store_Jsp_Servlet/client/static/img/product-10.jpg"
-											alt="Product Image">
-										</a>
-										<div class="product-action">
-											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
-												class="fa fa-heart"></i></a> <a href="#"><i
-												class="fa fa-search"></i></a>
-										</div>
-									</div>
-									<div class="product-price">
-										<h3>
-											<span>$</span>99
-										</h3>
-										<a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua
-											ngay</a>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
