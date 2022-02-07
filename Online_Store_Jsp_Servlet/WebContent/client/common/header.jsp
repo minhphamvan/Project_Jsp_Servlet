@@ -7,7 +7,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6">
-				<i class="fa fa-envelope"></i> minhpham@gmail.com
+				<i class="fa fa-envelope"></i> minhphamvan1401@gmail.com
 			</div>
 			<div class="col-sm-6">
 				<i class="fa fa-phone-alt"></i> 0981.576.005
@@ -30,31 +30,69 @@
 			<div class="collapse navbar-collapse justify-content-between"
 				id="navbarCollapse">
 				<div class="navbar-nav mr-auto">
-					<a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+					<a href="/Online_Store_Jsp_Servlet/index"
+						class="nav-item nav-link active">Trang chủ</a>
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
 							data-toggle="dropdown">Tất cả sản phẩm</a>
 						<div class="dropdown-menu">
-							<a href="wishlist.html" class="dropdown-item">Wishlist</a> <a
-								href="login.html" class="dropdown-item">Login & Register</a> <a
-								href="contact.html" class="dropdown-item">Contact Us</a>
+							<a href="/Online_Store_Jsp_Servlet/product/show-all"
+								class="dropdown-item">Tất cả sản phẩm</a> <a
+								href="/Online_Store_Jsp_Servlet/product/new"
+								class="dropdown-item">Sản phẩm mới</a>
 						</div>
 					</div>
-					<a href="checkout.html" class="nav-item nav-link">Sản phẩm yêu
-						thích</a> <a href="cart.html" class="nav-item nav-link">Giỏ hàng</a> <a
-						href="checkout.html" class="nav-item nav-link">Thanh toán</a> <a
-						href="contact.html" class="nav-item nav-link">Liên hệ</a>
+					<a href="/Online_Store_Jsp_Servlet/wish-list"
+						class="nav-item nav-link">Wishlist</a> <a
+						href="/Online_Store_Jsp_Servlet/cart" class="nav-item nav-link">Giỏ
+						hàng</a> <a href="/Online_Store_Jsp_Servlet/user/check-out"
+						class="nav-item nav-link">Thanh toán</a> <a
+						href="/Online_Store_Jsp_Servlet/contact" class="nav-item nav-link">Liên
+						hệ</a>
 				</div>
 
 				<div class="navbar-nav ml-auto">
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-toggle="dropdown">Tài khoản</a>
-						<div class="dropdown-menu">
-							<a href="#" class="dropdown-item">Đăng nhập</a> <a href="#"
-								class="dropdown-item">Đăng kí</a>
-						</div>
-					</div>
+					<c:choose>
+						<c:when test="${sessionScope.currentUser == null}">
+							<div class="nav-item dropdown">
+								<a href="/Online_Store_Jsp_Servlet/login"
+									class="nav-link dropdown-toggle" data-toggle="dropdown">Đăng
+									nhập / Đăng ký</a>
+								<div class="dropdown-menu">
+									<a href="/Online_Store_Jsp_Servlet/login" class="dropdown-item">Đăng
+										nhập</a> <a href="/Online_Store_Jsp_Servlet/register"
+										class="dropdown-item">Đăng kí</a>
+								</div>
+							</div>
+						</c:when>
+
+						<c:otherwise>
+							<c:if test="${sessionScope.currentUser.role == 'ROLE_USER'}">
+								<div class="nav-item dropdown">
+									<a href="/Online_Store_Jsp_Servlet/user/my-account"
+										class="nav-link dropdown-toggle" data-toggle="dropdown">My
+										account</a>
+									<div class="dropdown-menu">
+										<a href="/Online_Store_Jsp_Servlet/user/my-account"
+											class="dropdown-item">Thông tin chi tiết</a> <a
+											href="/Online_Store_Jsp_Servlet/user/bill/show-all"
+											class="dropdown-item">Tất cả đơn hàng</a><a
+											href="/Online_Store_Jsp_Servlet/user/change-password"
+											class="dropdown-item">Đổi mật khẩu</a><a
+											href="/Online_Store_Jsp_Servlet/logout" class="dropdown-item">Đăng
+											xuất</a>
+									</div>
+								</div>
+							</c:if>
+
+							<c:if test="${sessionScope.currentUser.role == 'ROLE_ADMIN'}">
+								<a href="/Online_Store_Jsp_Servlet/admin/dashboard"
+									class="nav-item nav-link">Trang quản trị</a>
+							</c:if>
+						</c:otherwise>
+
+					</c:choose>
+
 				</div>
 			</div>
 		</nav>
@@ -69,7 +107,7 @@
 
 			<div class="col-md-3">
 				<div class="logo">
-					<a href="index.html"> <img
+					<a href="/Online_Store_Jsp_Servlet/index"> <img
 						src="/Online_Store_Jsp_Servlet/client/static/img/logo.png"
 						alt="Logo">
 					</a>

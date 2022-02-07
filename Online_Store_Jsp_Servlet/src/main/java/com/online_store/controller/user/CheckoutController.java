@@ -37,7 +37,9 @@ public class CheckoutController extends HttpServlet {
 				for (Entry<Integer, BillProduct> entry : map.entrySet()) {
 					BillProduct billProduct = entry.getValue();
 
-					orderTotal += billProduct.getSubTotal();
+					double subTotal = billProduct.getQuantity() * billProduct.getProduct().getPrice();
+					
+					orderTotal += subTotal;
 				}
 
 				req.setAttribute("orderTotal", orderTotal);
@@ -71,7 +73,10 @@ public class CheckoutController extends HttpServlet {
 		for (Entry<Integer, BillProduct> entry : map.entrySet()) {
 			BillProduct billProduct = entry.getValue();
 
-			orderTotal += billProduct.getSubTotal();
+			double subTotal = billProduct.getQuantity() * billProduct.getProduct().getPrice();
+			System.out.println(subTotal);
+			
+			orderTotal += subTotal;
 		}
 
 		String paymentMethod = req.getParameter("payment_method");

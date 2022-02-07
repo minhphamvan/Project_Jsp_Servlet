@@ -12,22 +12,36 @@
 		</div>
 		<div class="left__profile">
 			<div class="left__image">
-				<a><img alt=""></a>
+				<a href="/Online_Store_Jsp_Servlet/admin/info"><img
+					src="/Online_Store_Jsp_Servlet/show-image?image=${sessionScope.currentUser.image}"></a>
 			</div>
 
-			<a>
-				<p class="left__name"></p>
+			<a href="/Online_Store_Jsp_Servlet/admin/info">
+				<p class="left__name">${sessionScope.currentUser.fullName}</p>
 			</a>
 		</div>
 
 		<ul class="left__menu">
-			<li class="left__menuItem"><a class="left__title"><img
+			<li class="left__menuItem"><a class="left__title"
+				href="/Online_Store_Jsp_Servlet/admin/dashboard"><img
 					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-dashboard.svg"
-					alt="">Bảng điều khiển</a></li>
+					alt="">Trang quản trị</a></li>
 
-			<li class="left__menuItem"><a class="left__title"><img
-					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-settings.svg"
-					alt="">Thông tin tài khoản</a></li>
+			<li class="left__menuItem">
+				<div class="left__title">
+					<img
+						src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-settings.svg"
+						alt="">My Account<img class="left__iconDown"
+						src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-down.svg"
+						alt="">
+				</div>
+				<div class="left__text">
+					<a class="left__link" href="/Online_Store_Jsp_Servlet/admin/info">Thông
+						tin chi tiết</a> <a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/change-password">Đổi mật
+						khẩu</a>
+				</div>
+			</li>
 
 			<li class="left__menuItem">
 				<div class="left__title">
@@ -55,7 +69,10 @@
 						alt="">
 				</div>
 				<div class="left__text">
-					<a class="left__link">Thêm sản phẩm</a> <a class="left__link">Xem
+					<a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/product/add">Thêm sản
+						phẩm</a> <a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/product/show-all">Xem
 						tất cả</a>
 				</div>
 			</li>
@@ -69,8 +86,11 @@
 						alt="">
 				</div>
 				<div class="left__text">
-					<a class="left__link">Thêm người dùng</a> <a class="left__link">Xem
-						tất cả</a>
+					<a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/user/add">Thêm người
+						dùng</a> <a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/user/show-all">Xem tất
+						cả</a>
 				</div>
 			</li>
 
@@ -83,16 +103,21 @@
 						alt="">
 				</div>
 				<div class="left__text">
-					<a class="left__link">Thêm đơn hàng</a> <a class="left__link">Xem
-						tất cả</a>
+					<a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/bill/add">Thêm đơn hàng</a>
+					<a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/bill/show-all">Xem tất
+						cả</a>
 				</div>
 			</li>
 
-			<li class="left__menuItem"><a class="left__title"><img
+			<li class="left__menuItem"><a class="left__title"
+				href="/Online_Store_Jsp_Servlet/index"><img
 					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-tag.svg"
 					alt="">Quay lại trang chủ</a></li>
 
-			<li class="left__menuItem"><a class="left__title" href="/Online_Store_Jsp_Servlet/logout"><img
+			<li class="left__menuItem"><a class="left__title"
+				href="/Online_Store_Jsp_Servlet/logout"><img
 					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-logout.svg"
 					alt="">Đăng Xuất</a></li>
 		</ul>

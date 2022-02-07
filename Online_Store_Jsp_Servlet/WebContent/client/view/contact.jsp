@@ -64,7 +64,7 @@
 							<i class="fa fa-map-marker"></i>Hà Đông, Hà Nội
 						</h3>
 						<h3>
-							<i class="fa fa-envelope"></i>minhpham@gmail.com
+							<i class="fa fa-envelope"></i>minhphamvan1401@gmail.com
 						</h3>
 						<h3>
 							<i class="fa fa-phone"></i>0981.576.005

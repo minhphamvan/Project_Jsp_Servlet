@@ -47,11 +47,13 @@
 	<div class="breadcrumb-wrap">
 		<div class="container-fluid">
 			<ul class="breadcrumb">
-				<li class="breadcrumb-item"><a th:href="@{/index}">Trang
-						chủ</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/user/my-info}">Tài
-						khoản</a></li>
-				<li class="breadcrumb-item active">Chi tiết đơn hàng</li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/user/my-account">Tài khoản</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/user/my-account">Đơn hàng</a></li>
+				<li class="breadcrumb-item active">Chi tiết</li>
 			</ul>
 		</div>
 	</div>
@@ -107,7 +109,7 @@
 
 							<a href="
 								/Online_Store_Jsp_Servlet/user/bill/show-all"
-								style="padding-left: 680px"><img alt=""> Xem tất cả
+								style="padding-left: 850px"><img src="/Online_Store_Jsp_Servlet/client/static/img/arrow-left.svg"> Xem tất cả
 								đơn hàng </a>
 						</div>
 

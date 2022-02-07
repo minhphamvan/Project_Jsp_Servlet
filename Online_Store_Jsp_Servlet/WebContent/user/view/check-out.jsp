@@ -101,10 +101,10 @@
 									Tổng tiền<span>$${orderTotal}</span>
 								</p>
 								<p class="ship-cost">
-									Phí giao hàng<span>$1</span>
+									Phí giao hàng<span>$0</span>
 								</p>
 								<h2>
-									Tổng cộng<span>$${orderTotal + 1}</span>
+									Tổng cộng<span>$${orderTotal}</span>
 								</h2>
 							</div>
 

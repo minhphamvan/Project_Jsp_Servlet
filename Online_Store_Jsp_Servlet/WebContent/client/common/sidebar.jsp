@@ -3,6 +3,7 @@
 
 <!-- Side Bar Start -->
 <div class="col-lg-3 sidebar">
+
 	<div class="sidebar-widget category">
 		<h2 class="title">Danh mục</h2>
 		<nav class="navbar bg-light">
@@ -15,6 +16,7 @@
 			</ul>
 		</nav>
 	</div>
+ 
 
 	<div class="sidebar-widget widget-slider">
 		<div class="sidebar-slider normal-slider">
@@ -101,6 +103,7 @@
 		</div>
 	</div>
 
+
 	<div class="sidebar-widget brands">
 		<h2 class="title">Our Brands</h2>
 		<ul>
@@ -112,6 +115,7 @@
 			<li><a href="#">Sagittis</a><span>(28)</span></li>
 		</ul>
 	</div>
+
 
 	<div class="sidebar-widget tag">
 		<h2 class="title">Tags Cloud</h2>

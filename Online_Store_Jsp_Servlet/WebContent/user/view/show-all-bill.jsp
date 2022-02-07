@@ -47,10 +47,10 @@
 	<div class="breadcrumb-wrap">
 		<div class="container-fluid">
 			<ul class="breadcrumb">
-				<li class="breadcrumb-item"><a th:href="@{/index}">Trang
-						chủ</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/user/my-info}">Tài
-						khoản</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a
+					href="/Online_Store_Jsp_Servlet/user/my-account">Tài khoản</a></li>
 				<li class="breadcrumb-item active">Tất cả đơn hàng</li>
 			</ul>
 		</div>
@@ -112,10 +112,13 @@
 
 					</div>
 
-					<div class="tab-content">
-						<a style="padding: 40px 0px 40px 250px"><img alt=""> Đơn
-							hàng trống. Quay lại mua hàng </a>
-					</div>
+					<c:if test="${list.size() == 0}">
+						<div class="tab-content">
+							<a style="padding: 40px 0px 40px 250px"><img src="/Online_Store_Jsp_Servlet/client/static/img/arrow-left.svg">
+								Đơn hàng trống. Quay lại mua hàng </a>
+						</div>
+					</c:if>
+					
 				</div>
 			</div>
 		</div>

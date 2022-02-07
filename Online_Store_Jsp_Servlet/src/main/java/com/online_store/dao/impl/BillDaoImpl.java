@@ -72,7 +72,7 @@ public class BillDaoImpl implements BillDao {
 
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setInt(1, idUser);
-			
+
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			UserDaoImpl userDaoImpl = new UserDaoImpl();
@@ -85,12 +85,12 @@ public class BillDaoImpl implements BillDao {
 				String shippingAddress = resultSet.getString("shipping_address");
 				String note = resultSet.getString("note");
 				String orderDate = resultSet.getString("order_date");
-				String orderTotal = resultSet.getString("order_total");
+				double orderTotal = resultSet.getDouble("order_total");
 				String paymentMethod = resultSet.getString("payment_method");
 				String status = resultSet.getString("status");
 
-				Bill bill = new Bill(id, user, recipientName, recipientPhone, shippingAddress, note, orderDate, id,
-						paymentMethod, status);
+				Bill bill = new Bill(id, user, recipientName, recipientPhone, shippingAddress, note, orderDate,
+						orderTotal, paymentMethod, status);
 
 				list.add(bill);
 			}
@@ -123,11 +123,11 @@ public class BillDaoImpl implements BillDao {
 				String shippingAddress = resultSet.getString("shipping_address");
 				String note = resultSet.getString("note");
 				String orderDate = resultSet.getString("order_date");
-				String orderTotal = resultSet.getString("order_total");
+				double orderTotal = resultSet.getDouble("order_total");
 				String paymentMethod = resultSet.getString("payment_method");
 				String status = resultSet.getString("status");
 
-				Bill bill = new Bill(id, user, recipientName, recipientPhone, shippingAddress, note, orderDate, id,
+				Bill bill = new Bill(id, user, recipientName, recipientPhone, shippingAddress, note, orderDate, orderTotal,
 						paymentMethod, status);
 
 				list.add(bill);

@@ -37,7 +37,9 @@ public class AdminFilter implements Filter {
 
 			if (user.getRole().equals("ROLE_ADMIN")) {
 				chain.doFilter(request, response);
-			} else {
+			} else if (user.getRole().equals("ROLE_USER")) {
+				resp.sendRedirect("/Online_Store_Jsp_Servlet/user/my-account");
+			}else {
 				resp.sendRedirect("/Online_Store_Jsp_Servlet/login");
 			}
 		} else {
