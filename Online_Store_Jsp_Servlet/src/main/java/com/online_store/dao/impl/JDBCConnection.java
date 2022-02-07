@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class JDBCConnection {
 	public static Connection connectToDatabase() {
-		final String URL = "jdbc:mysql://localhost:3306/online_store";
+		final String URL = "jdbc:mysql://localhost:3306/online_store?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8";
 		final String USER = "root";
 		final String PASSWORD = "";
 

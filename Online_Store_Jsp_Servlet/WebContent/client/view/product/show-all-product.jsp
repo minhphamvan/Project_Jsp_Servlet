@@ -117,22 +117,26 @@
 										<a
 											href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}">${product.name}</a>
 										<div class="ratting">
-
-											<i class="fa fa-star"></i>
-
+											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+												class="fa fa-star"></i>
 										</div>
 									</div>
 
 									<div class="product-image">
-										<a href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}"> <img
+										<a
+											href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}">
+											<img
 											src="/Online_Store_Jsp_Servlet/show-image?image=${product.image}"
 											alt="Product Image">
 										</a>
 
 										<div class="product-action">
-											<a href="#"><i class="fa fa-cart-plus"></i></a> <a href="#"><i
+											<a
+												href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
+												class="fa fa-cart-plus"></i></a> <a href="#"><i
 												class="fa fa-heart"></i></a> <a
-												href="/Online_Store_Jsp_Servlet/client/product/details?id=${product.id}"><i
+												href="/Online_Store_Jsp_Servlet/product/details?id=${product.id}"><i
 												class="fa fa-search"></i></a>
 										</div>
 									</div>
@@ -141,8 +145,9 @@
 										<h3>
 											<span>$</span>${product.price}
 										</h3>
-										<a class="btn" href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i class="fa fa-shopping-cart"></i>Mua
-											ngay</a>
+										<a class="btn"
+											href="/Online_Store_Jsp_Servlet/add-to-cart?id=${product.id}"><i
+											class="fa fa-shopping-cart"></i>Mua ngay</a>
 									</div>
 								</div>
 							</div>

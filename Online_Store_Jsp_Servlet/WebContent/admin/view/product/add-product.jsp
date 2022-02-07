@@ -73,7 +73,7 @@
 										placeholder="Mô tả"></textarea>
 								</div>
 
-								<button class="btn" type="submit">Cập nhật</button>
+								<button class="btn" type="submit">Thêm</button>
 
 							</form>
 
