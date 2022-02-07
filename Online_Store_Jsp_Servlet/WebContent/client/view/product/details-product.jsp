@@ -202,7 +202,7 @@
 						<div
 							class="row align-items-center product-slider product-slider-3">
 
-							<c:forEach var="product" items="${list}">
+							<c:forEach var="product" items="${listProduct}">
 
 								<div class="col-lg-3">
 									<div class="product-item">

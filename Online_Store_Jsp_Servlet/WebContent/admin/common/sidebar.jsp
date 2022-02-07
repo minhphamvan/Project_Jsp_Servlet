@@ -16,7 +16,7 @@
 					src="/Online_Store_Jsp_Servlet/show-image?image=${sessionScope.currentUser.image}"></a>
 			</div>
 
-			<a href="/Online_Store_Jsp_Servlet/admin/info">
+			<a href="/Online_Store_Jsp_Servlet/admin/my-account">
 				<p class="left__name">${sessionScope.currentUser.fullName}</p>
 			</a>
 		</div>
@@ -36,8 +36,9 @@
 						alt="">
 				</div>
 				<div class="left__text">
-					<a class="left__link" href="/Online_Store_Jsp_Servlet/admin/info">Thông
-						tin chi tiết</a> <a class="left__link"
+					<a class="left__link"
+						href="/Online_Store_Jsp_Servlet/admin/my-account">Thông tin
+						chi tiết</a> <a class="left__link"
 						href="/Online_Store_Jsp_Servlet/admin/change-password">Đổi mật
 						khẩu</a>
 				</div>
@@ -94,22 +95,10 @@
 				</div>
 			</li>
 
-			<li class="left__menuItem">
-				<div class="left__title">
-					<img
-						src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
-						alt="">Đơn hàng<img class="left__iconDown"
-						src="/Online_Store_Jsp_Servlet/admin/static/assets/arrow-down.svg"
-						alt="">
-				</div>
-				<div class="left__text">
-					<a class="left__link"
-						href="/Online_Store_Jsp_Servlet/admin/bill/add">Thêm đơn hàng</a>
-					<a class="left__link"
-						href="/Online_Store_Jsp_Servlet/admin/bill/show-all">Xem tất
-						cả</a>
-				</div>
-			</li>
+			<li class="left__menuItem"><a class="left__title"
+				href="/Online_Store_Jsp_Servlet/admin/bill/show-all"><img
+					src="/Online_Store_Jsp_Servlet/admin/static/assets/icon-book.svg"
+					alt="">Tất cả đơn hàng</a></li>
 
 			<li class="left__menuItem"><a class="left__title"
 				href="/Online_Store_Jsp_Servlet/index"><img

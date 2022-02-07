@@ -10,10 +10,12 @@
 		<h2 class="title">Danh mục</h2>
 		<nav class="navbar bg-light">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="#"><i
-						class="fa fa-female"></i>Danh mục</a> <a class="nav-link" href="#"><i
-						class="fa fa-female"></i>Danh mục</a> <a class="nav-link" href="#"><i
-						class="fa fa-female"></i>Danh mục</a></li>
+				<li class="nav-item"><c:forEach var="category"
+						items="${listCategory}">
+						<a class="nav-link"
+							href="/Online_Store_Jsp_Servlet/product/search?idCategory=${category.id}"><i
+							class="fa fa-female"></i>${category.name}</a>
+					</c:forEach></li>
 
 			</ul>
 		</nav>
@@ -22,7 +24,7 @@
 	<div class="sidebar-widget widget-slider">
 		<div class="sidebar-slider normal-slider">
 
-			<c:forEach var="product" items="${list}">
+			<c:forEach var="product" items="${listProduct}">
 
 				<div class="product-item">
 					<div class="product-title">

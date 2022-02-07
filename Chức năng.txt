@@ -1,17 +1,13 @@
 - Listener
 
-- User: Remember me
+- Search: by category (luôn có listCategory khi deploy website mà không cần đi tạo attribute trong từng servlet ???), by name
 
+- Login: Remember me
 - Login sử dụng Google
 
-- Client: Search by name, Search by price, Search by category
 - Client: Phân trang
 
-
-
-- User:  write review
-- Admin: show all review, details review
-
+- Lọc XSS: Custom tag
 
 - Admin: add coupon, show all coupon
 - User:  apply coupon

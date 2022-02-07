@@ -26,8 +26,8 @@ public class DetailsProductController extends HttpServlet {
 		Product product = productDaoImpl.getProductById(id);
 		req.setAttribute("product", product);
 		
-		List<Product> list = productDaoImpl.getAllProduct();		
-		req.setAttribute("list", list);
+		List<Product> listProduct = productDaoImpl.getAllProduct();		
+		req.setAttribute("listProduct", listProduct);
 
 		req.getRequestDispatcher("/client/view/product/details-product.jsp").forward(req, resp);
 	}

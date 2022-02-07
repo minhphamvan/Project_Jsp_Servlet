@@ -31,18 +31,10 @@
 				id="navbarCollapse">
 				<div class="navbar-nav mr-auto">
 					<a href="/Online_Store_Jsp_Servlet/index"
-						class="nav-item nav-link active">Trang chủ</a>
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-toggle="dropdown">Tất cả sản phẩm</a>
-						<div class="dropdown-menu">
-							<a href="/Online_Store_Jsp_Servlet/product/show-all"
-								class="dropdown-item">Tất cả sản phẩm</a> <a
-								href="/Online_Store_Jsp_Servlet/product/new"
-								class="dropdown-item">Sản phẩm mới</a>
-						</div>
-					</div>
-					<a href="/Online_Store_Jsp_Servlet/wish-list"
+						class="nav-item nav-link active">Trang chủ</a> <a
+						href="/Online_Store_Jsp_Servlet/product/show-all"
+						class="nav-item nav-link">Cửa hàng</a> <a
+						href="/Online_Store_Jsp_Servlet/wish-list"
 						class="nav-item nav-link">Wishlist</a> <a
 						href="/Online_Store_Jsp_Servlet/cart" class="nav-item nav-link">Giỏ
 						hàng</a> <a href="/Online_Store_Jsp_Servlet/user/check-out"

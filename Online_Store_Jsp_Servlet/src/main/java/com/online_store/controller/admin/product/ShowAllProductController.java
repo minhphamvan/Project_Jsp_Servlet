@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.online_store.dao.impl.CategoryDaoImpl;
 import com.online_store.dao.impl.ProductDaoImpl;
+import com.online_store.model.Category;
 import com.online_store.model.Product;
 
 @WebServlet(urlPatterns = {"/admin/product/show-all"})
@@ -17,8 +19,7 @@ public class ShowAllProductController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ProductDaoImpl productDaoImpl = new ProductDaoImpl();
-		List<Product> listProduct = productDaoImpl.getAllProduct();
-		
+		List<Product> listProduct = productDaoImpl.getAllProduct();	
 		req.setAttribute("listProduct", listProduct);
 		
 		req.getRequestDispatcher("/admin/view/product/show-all-product.jsp").forward(req, resp);
