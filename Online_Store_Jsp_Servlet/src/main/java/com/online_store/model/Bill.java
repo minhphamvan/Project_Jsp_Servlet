@@ -36,5 +36,4 @@ public class Bill {
 		this.paymentMethod = paymentMethod;
 		this.status = status;
 	}
-
 }
