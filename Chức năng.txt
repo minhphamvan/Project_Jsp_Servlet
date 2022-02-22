@@ -2,7 +2,6 @@
 
 - Search: by category (luôn có listCategory khi deploy website mà không cần đi tạo attribute trong từng servlet ???), by name
 
-- Login: Remember me
 - Login sử dụng Google
 
 - Client: Phân trang

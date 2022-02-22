@@ -109,7 +109,7 @@
 
 							<a href="
 								/Online_Store_Jsp_Servlet/user/bill/show-all"
-								style="padding-left: 850px"><img src="/Online_Store_Jsp_Servlet/client/static/img/arrow-left.svg"> Xem tất cả
+								style="padding-left: 670px"><img src="/Online_Store_Jsp_Servlet/client/static/img/arrow-left.svg"> Xem tất cả
 								đơn hàng </a>
 						</div>
 

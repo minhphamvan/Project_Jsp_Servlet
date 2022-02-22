@@ -72,28 +72,59 @@
 								<div class="col-md-3"></div>
 
 								<div class="col-md-6">
-									<label>Tên đăng nhập</label> <input class="form-control"
-										type="text" name="username" placeholder="Tên đăng nhập">
+									<label>Tên đăng nhập</label>
+									<c:choose>
+										<c:when test="${cUsername != null}">
+											<input class="form-control" type="text" name="username"
+												value="${cUsername}">
+										</c:when>
+										<c:otherwise>
+											<input class="form-control" type="text" name="username"
+												placeholder="Tên đăng nhập">
+										</c:otherwise>
+									</c:choose>
 								</div>
 								<div class="col-md-3"></div>
 
 								<div class="col-md-3"></div>
 								<div class="col-md-6">
-									<label>Mật khẩu</label> <input class="form-control" type="text"
-										name="password" placeholder="Mật khẩu">
+									<label>Mật khẩu</label>
+									<c:choose>
+										<c:when test="${cPassword != null}">
+											<input class="form-control" type="text" name="password"
+												value="${cPassword}">
+										</c:when>
+										<c:otherwise>
+											<input class="form-control" type="text" name="password"
+												placeholder="Mật khẩu">
+										</c:otherwise>
+									</c:choose>
 								</div>
 								<div class="col-md-3"></div>
 
 								<div class="col-md-3"></div>
 								<div class="col-md-6">
 									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input"
-											id="newaccount"> <label class="custom-control-label"
-											for="newaccount">Lưu tài khoản</label>
+
+										<c:choose>
+											<c:when test="${cRemember.equals('1')}">
+												<input type="checkbox" class="custom-control-input"
+													id="newaccount" name="remember" value="1" checked="checked">
+												<label class="custom-control-label" for="newaccount">Lưu
+													tài khoản</label>
+											</c:when>
+											
+											<c:otherwise>
+												<input type="checkbox" class="custom-control-input"
+													id="newaccount" name="remember" value="1">
+												<label class="custom-control-label" for="newaccount">Lưu
+													tài khoản</label>
+											</c:otherwise>
+										</c:choose>
 									</div>
 
 									<c:if test="${message != null}">
-										<label style="color:red;">${message}</label>
+										<label style="color: red;">${message}</label>
 									</c:if>
 								</div>
 								<div class="col-md-3"></div>
